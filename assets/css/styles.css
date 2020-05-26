@@ -1,0 +1,160 @@
+/* LIST GROUP */
+
+.list-group-item {
+    background: transparent;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/* HR */
+
+.hr-1 {
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(255, 255, 255, 1);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(255, 255, 255, 1);
+    box-shadow: 0px 2px 5px 0px rgba(255, 255, 255, 1);
+}
+
+/* FOOTER */
+
+.footer {
+    background: url(../img/footer/background.jpg);
+}
+
+/* STARS */
+
+.starChecked {
+    color: #8d1b3d;
+}
+
+/* CARD */
+
+.card {
+    border: 0px solid rgba(0, 0, 0, .125) !important;
+    background: transparent;
+}
+
+/* JUMBOTRON */
+
+.jumbotron {
+    border-radius: 0rem !important;
+}
+
+/* FORMS */
+
+.form-control .search_options {
+    border: 0px solid #ced4da !important;
+    border-radius: 0rem !important;
+}
+
+/* BACKGROUNDS */
+
+.bg-maroon {
+    background: #8d1b3d;
+}
+
+.bg-gold {
+    background: #fec801;
+}
+
+.bg-grey {
+    background: #f5f6fa;
+}
+
+/* TEXT/LINKS */
+
+.text-small {
+    font-size: small;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.nav-item {
+    font-size: 13px;
+    margin-right: 20px;
+}
+
+.dropdown-item {
+    font-size: 13px !important;
+}
+
+.dropdown-toggle::after {
+    color: #8d1b3d;
+}
+
+.text-maroon {
+    color: #8d1b3d;
+}
+
+.text-gold {
+    color: #fec801;
+}
+
+/* BUTTONS */
+
+.btn-maroon {
+    color: #fff;
+    background: #8d1b3d;
+    border-color: #8d1b3d;
+    border-radius: 0px;
+}
+
+.btn-gold {
+    color: #fff;
+    background: #fec801;
+    border-color: #fec801;
+    border-radius: 0px;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.btn-outline-secondary {
+    border: 2px solid #777777 !important;
+    border-radius: 2px;
+}
+
+/* BORDERS */
+
+.border-top-maroon {
+    border-top: #8d1b3d solid 1px;
+}
+
+.border-right-maroon {
+    border-right: #8d1b3d solid 1px;
+}
+
+.border-bottom-maroon {
+    border-bottom: #8d1b3d solid 1px;
+}
+
+.border-left-maroon {
+    border-left: #8d1b3d solid 1px;
+}
+
+/* ALIGNMENT */
+
+.vertical-text-bottom {
+    vertical-align: text-bottom;
+}
+
+.vertical-align-sub {
+    vertical-align: sub;
+}
