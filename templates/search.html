@@ -1,0 +1,69 @@
+
+
+
+    <!--  Navbar template directive  -->
+
+    <div class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner text-center">
+            <div class="carousel-item active">
+                <div class="d-flex align-items-center justify-content-center" style="background: url(assets/img/home/background.jpg); height: 75vh;">
+                    <div class="container">
+                        <div class="col-md-12">
+                            <h1 class="text-uppercase"><span class="text-white">FIND YOUR IDEAL</span><span class="text-gold"> APARTMENT</span></h1>
+                        </div>
+                        <div class="col-md-12">
+                            <h1 class="text-uppercase"><span class="text-gold">FOR RENT</span><span class="text-white"> WITH US</span></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <search-bar></search-bar>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="container-fluid">
+                    <div class="row mb-5" id="items">
+                        <div class="col-xs-12 col-sm-6 col-md-3 mb-2" ng-repeat="item in search">
+                            <div class="card animated zoomIn delay-1s">
+                                <div class="card-heading text-center">
+                                    <img src="assets/img/home/sample-listing-img.PNG" class="img-fluid w-100">
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="text-uppercase">THREE BEDROOM APARTMENT EZDAN</h6>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-8 col-md-8">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p class="mb-0">Fereej Bin Mahmood, Qatar</p>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <span class="fa fa-star starChecked"></span>
+                                                    <span class="fa fa-star starChecked"></span>
+                                                    <span class="fa fa-star starChecked"></span>
+                                                    <span class="fa fa-star"></span>
+                                                    <span class="fa fa-star"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xs-12 col-sm-4 col-md-4 border-left-maroon">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p class="mb-0 text-maroon">QAR 1000</p>
+                                                </div>
+                                                <div class="col-md-12" sty>
+                                                    <p class="mb-0" style="text-decoration: line-through">QAR 1500</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -6,7 +6,6 @@ app.directive('navBar', function () {
     return {
         restrict: 'E',
         templateUrl: 'templates/nav/nav.html',
-        controller: 'loginController'
     };
 });
 
@@ -17,13 +16,36 @@ app.directive('footerFile', function () {
     };
 });
 
+app.directive('searchBar', function () {
+    return {
+        restrict: 'E',
+        templateUrl: 'templates/search/search.html',
+    };
+});
+
+app.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+      templateUrl : "./templates/main.html",
+      controller: 'journalGlobalController'
+    })
+    .when("/search", {
+      templateUrl : "./templates/search.html",
+      controller: 'journalGlobalController'
+    })
+    .when("/post", {
+        templateUrl : "./templates/post/post_property.html",
+        controller: 'journalGlobalController'
+      })
+  });
+
 app.controller("journalGlobalController", ["$scope", "loginService", function ($scope,loginService) {
     // Type Code here
 
     $scope.search = [1, 2, 3, 4, 5, 6, 7, 8];
 
     $scope.searchItem = function () {
-        window.location.href = "./search.html";
+        window.location.href = "'templates/search.html";
         var api ='http://localhost:3001/login';
         var postParams =  {
             'user_name': '8106986509',
