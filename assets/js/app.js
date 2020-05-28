@@ -23,7 +23,7 @@ app.directive('searchBar', function () {
     };
 });
 
-app.config(function($routeProvider) {
+app.config(function($routeProvider, $locationProvider) {
     $routeProvider
     .when("/", {
       templateUrl : "./templates/main.html",
@@ -37,6 +37,9 @@ app.config(function($routeProvider) {
         templateUrl : "./templates/post/post_property.html",
         controller: 'journalGlobalController'
       })
+      $locationProvider
+        .html5Mode(true);
+
   });
 
 app.controller("journalGlobalController", ["$scope", "loginService", function ($scope,loginService) {
