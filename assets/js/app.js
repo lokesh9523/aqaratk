@@ -45,7 +45,7 @@ app.controller("journalGlobalController", ["$scope", "loginService", function ($
     $scope.search = [1, 2, 3, 4, 5, 6, 7, 8];
 
     $scope.searchItem = function () {
-        window.location.href = "templates/search.html";
+        window.location.href = "#!search";
         var api ='http://localhost:3001/login';
         var postParams =  {
             'user_name': '8106986509',
