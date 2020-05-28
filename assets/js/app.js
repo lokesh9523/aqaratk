@@ -23,7 +23,8 @@ app.directive('searchBar', function () {
     };
 });
 
-app.config(function($routeProvider) {
+app.config(['$routeProvider', '$locationProvider',
+function($routeProvider, $locationProvider) {
     $routeProvider
     .when("/", {
       templateUrl : "templates/main.html",
@@ -37,31 +38,17 @@ app.config(function($routeProvider) {
         templateUrl : "templates/post/post_property.html",
         controller: 'journalGlobalController'
       })
-  });
+      $locationProvider.html5Mode(true)
+    }]
+    )
+
 
 app.controller("journalGlobalController", ["$scope", "loginService", function ($scope,loginService) {
     // Type Code here
 
     $scope.search = [1, 2, 3, 4, 5, 6, 7, 8];
 
-    $scope.searchItem = function () {
-        window.location.href = "#!search";
-        var api ='http://localhost:3001/login';
-        var postParams =  {
-            'user_name': '8106986509',
-            'password': 'test'
-        };
-    
-        return loginService.authenticateUser(api, postParams)
-            .then(function (data) {
-                console.log(data,"====================")
-            })
-            .catch(function (error) {
-                $scope.error = {
-                    message: error.message
-                };
-            });
-    }
+
     $scope.districts = ['Al Jasrah', 'Al Bidda', 'Fereej Mohamed Bin Jasim', 'Mushayrib', 'Al Najada', 'Barahat Al Jufairi', 'Fereej Al Asmakh', 'Old Al Ghanim', 'Al Souq', 'Wadi Al Sail', 'Rumeilah', 'Fereej Abdel Aziz', 'Ad Dawhah al Jadidah', 'Old Al Ghanim', 'Al Rufaa', 'Old Al Hitmi', 'As Salatah', 'Al Mirqab', 'Doha Port', 'Fereej Bin Mahmoud', 'Rawdat Al Khail', 'Fereej Bin Durham', 'Al Mansoura', 'Najma', 'Umm Ghuwailina', 'Al Khulaifat', 'Ras Abu Aboud', 'Duhail', 'Umm Lekhba', 'Madinat Khalifa North', 'Dahl Al Hamam', 'Al Markhiya', 'Madinat Khalifa South', 'Fereej Kulaib', 'Al Messila', 'Fereej Bin Omran', 'New Al Hitmi', 'Hamad Medical City', 'Al Sadd', 'New Al Mirqab', 'Fereej Al Nasr', 'New Salatah', 'Nuaija', 'Al Hilal', 'Old Airport', 'Al Thumama', 'Doha International Airport', 'Zone 50', 'Industrial Area', 'Zone 58', 'Al Dafna', 'Al Qassar', 'Onaiza', 'Lejbailat', 'Leqtaifiya', 'Hazm Al Markhiya', 'Jelaiah', 'Al Tarfa', 'Jeryan Nejaima'];
 
     $scope.property_type = ['Apartment', 'Villa', 'Compound', 'Hotel Appartments', 'Office Space', 'Shop', 'Storehouse', 'Show Room', 'Residential Building', 'Commercial Building', 'Administrative Building', 'Tower', 'Staff Accommodation'];
@@ -69,6 +56,17 @@ app.controller("journalGlobalController", ["$scope", "loginService", function ($
     $scope.num_bedrooms = [1, 2, 3, 4, 5, 6];
 
     $scope.furniture_type = ['Semi Furnished', 'Fully Furnished']
+
+
+    $scope.searchItem = function () {
+        // if($scope.districts.value == null || $scope.property_type.value == null || $scope.num_bedrooms.value == null || $scope.furniture_type.value == null) {
+        //     alert("Please enter all the requirements");
+
+        //     window.location.href = "/index.html";
+        // }
+        
+        window.location.href = "/search";
+    }
   
         
 }]);
@@ -161,3 +159,5 @@ app.service('registerService', function ($http, $q) {
         }
     };
 });
+
+
