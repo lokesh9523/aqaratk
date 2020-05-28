@@ -26,15 +26,15 @@ app.directive('searchBar', function () {
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-      templateUrl : "./templates/main.html",
+      templateUrl : "templates/main.html",
       controller: 'journalGlobalController'
     })
     .when("/search", {
-      templateUrl : "./templates/search.html",
+      templateUrl : "templates/search.html",
       controller: 'journalGlobalController'
     })
     .when("/post", {
-        templateUrl : "./templates/post/post_property.html",
+        templateUrl : "templates/post/post_property.html",
         controller: 'journalGlobalController'
       })
   });
@@ -45,7 +45,7 @@ app.controller("journalGlobalController", ["$scope", "loginService", function ($
     $scope.search = [1, 2, 3, 4, 5, 6, 7, 8];
 
     $scope.searchItem = function () {
-        window.location.href = "'templates/search.html";
+        window.location.href = "templates/search.html";
         var api ='http://localhost:3001/login';
         var postParams =  {
             'user_name': '8106986509',
