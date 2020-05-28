@@ -23,8 +23,7 @@ app.directive('searchBar', function () {
     };
 });
 
-app.config(['$routeProvider', '$locationProvider',
-function($routeProvider, $locationProvider) {
+app.config(function($routeProvider, $locationProvider) {
     $routeProvider
     .when("/", {
       templateUrl : "templates/main.html",
@@ -38,9 +37,16 @@ function($routeProvider, $locationProvider) {
         templateUrl : "templates/post/post_property.html",
         controller: 'journalGlobalController'
       })
+    .when("/about", {
+    templateUrl : "templates/about.html",
+    controller: 'journalGlobalController'
+    })
+    .when("/contact", {
+        templateUrl : "templates/contact.html",
+        controller: 'journalGlobalController'
+        })
       $locationProvider.html5Mode(true)
-    }]
-    )
+    })
 
 
 app.controller("journalGlobalController", ["$scope", "loginService", function ($scope,loginService) {
@@ -53,9 +59,9 @@ app.controller("journalGlobalController", ["$scope", "loginService", function ($
 
     $scope.property_type = ['Apartment', 'Villa', 'Compound', 'Hotel Appartments', 'Office Space', 'Shop', 'Storehouse', 'Show Room', 'Residential Building', 'Commercial Building', 'Administrative Building', 'Tower', 'Staff Accommodation'];
 
-    $scope.num_bedrooms = [1, 2, 3, 4, 5, 6];
+    $scope.num_bedrooms = [1, 2, 3, 'Villa'];
 
-    $scope.furniture_type = ['Semi Furnished', 'Fully Furnished']
+    $scope.furniture_type = ['Furnished', 'Unfurnished']
 
 
     $scope.searchItem = function () {
@@ -67,7 +73,29 @@ app.controller("journalGlobalController", ["$scope", "loginService", function ($
         
         window.location.href = "/search";
     }
-  
+    // const langEl = document.querySelector('.language')
+    // const options = document.querySelectorAll('option')
+    // const descEl = document.querySelector('.descrption')
+    
+    // options.forEach(el => {
+    //     el.addEventListener('onChange', () => {
+    //         // langEl.querySelector('.active').classList.remove('active');
+    //         // el.classList.add('active');
+    
+    //         const attr = el.getAttribute('language');
+    //         console.log(attr)
+    //         descEl.textContent = data['attr'].descrption
+    //     })
+    // })
+    
+    // var data = {
+    //     'arabic':
+    //     {'descrption': 'عزز الجزر Lorem ipsum حسومات. أمارسها بحكمة! عليه أن يرسم إرادتنا المفتوحة التي يرفض منها. من في الدين ، ولكن من الأشياء. هو أيضا مخطئ؟ من قبل عائق مماثل لمن لمن؟'}
+    // }
+
+    $scope.languages=[{'language': 'En', value: 'English'}, {'language': 'Ar', value: 'Arabic'}]
+
+    $scope.langType = $scope.languages[0];
         
 }]);
 
