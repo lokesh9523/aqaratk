@@ -7,25 +7,31 @@
                         <form>
                             <div class="form-row text-white">
                                 <div class="form-group search_options col-sm-6 col-md-3">
+
                                     <label for="Location">Area</label>
                                     <select class="form-control" id="location" placeholder="Select City" ng-model="location" ng-options="x for x in districts">
+<!--                          <label for="Location">Muncipality</label>
+                                    <select class="form-control" id="location" placeholder="Select City" ng-model="location_id" ng-options="x.display_name for x in location"> -->
+
                                     <option value="">Search in Location</option>
                                     </select>
                                 </div>
                                 <div class="form-group search_options col-sm-6 col-md-2">
-                                    <label for="inputPassword4">Muncipality</label>
-                                    <select class="form-control" id="propertyType" placeholder="Property Type" ng-model="propertyType" ng-options="x for x in property_type" ng-change="check_type()">
-                                    <option value="">---Choose---</option>
+
+                         
+                                    <label for="inputPassword4">Property Type</label>
+                                    <select class="form-control" id="propertyType" placeholder="Property Type" ng-model="property_id" ng-options="x.display_name for x in property" ng-change="check_type()">
+                                    <option value="">Type of Property</option>
                                     </select> </div>
                                 <div class="form-group search_options col-sm-6 col-md-2">
-                                    <label for="inputPassword4">Looking For</label>
-                                    <select class="form-control" id="bedrooms" placeholder="Email" ng-model="bedrooms" ng-options="x for x in num_bedrooms">
+                                    <label for="inputPassword4">No. of bedrooms</label>
+                                    <select class="form-control" id="inputEmail4" placeholder="Email" ng-model="no_of_bed_rooms" ng-options="x for x in num_bedrooms">
                                     <option value="">No. of bedrooms</option>
                                     </select> </div>
                                 <div class="form-group search_options col-sm-6 col-md-3">
-                                    <label for="inputPassword4">Property Type</label>
-                                    <select class="form-control" id="furnitureType" placeholder="Email" ng-model="furnitureType" ng-options = "x for x in furniture_type">
-                                        <option value="">Select Property Type</option>
+                                    <label for="inputPassword4">Furniture</label>
+                                    <select class="form-control" id="inputEmail4" placeholder="Email" ng-model="furniture" ng-options = "x for x in furniture_type">
+                                      <option value="">Select Furniture Type</option>
                                     </select> </div>
                                 <div class="form-group col-sm-12 col-md-2">
                                     <label for="inputPassword1" style="visibility: hidden">Password</label>

@@ -25,33 +25,36 @@
                             <div class="form-row row text-white">
                                 <div class="form-group search_options col-md-6 col-sm-6 col-xs-12">
                                     <label for="Location">Muncipality</label>
-                                    <select class="form-control" id="location" placeholder="Select City" ng-model="location" ng-options="x for x in districts">
+                                    <select class="form-control" id="location" placeholder="Select City" ng-model="location_id"  ng-options="x.display_name for x in location" required>
                                     <option value="">Select area</option>
                                     </select>
                                 </div>
                                 <div class="form-group search_options col-md-6 col-sm-6 col-xs-12">
                                     <label for="inputPassword4">Property Type</label>
-                                    <select class="form-control" id="propertyType" placeholder="Property Type" ng-model="propertyType" ng-options="x for x in property_type" ng-change="check_type()">
+                                    <select class="form-control" id="propertyType" placeholder="Property Type" ng-model="property_id" ng-options="x.display_name for x in property"required >
                                     <option value="">Type of Property</option>
                                     </select> </div>
                                 <div class="form-group search_options col-md-6 col-sm-6 col-xs-12">
                                     <label for="inputPassword4">No. of bedrooms</label>
-                                    <select class="form-control" id="bedrooms" placeholder="Email" ng-model="bedrooms" ng-options="x for x in num_bedrooms">
+
+                                    <select class="form-control" id="inputEmail4" placeholder="Email" ng-model="no_of_bed_rooms" ng-options="x for x in num_bedrooms" required>
+
                                     <option value="">No. of bedrooms</option>
                                     </select> </div>
                                 <div class="form-group search_options col-md-6 col-sm-6 col-xs-12">
                                     <label for="inputPassword4">Furniture</label>
-                                    <select class="form-control" id="furnitureType" placeholder="Email" ng-model="furnitureType" ng-options = "x for x in furniture_type">
+                                    <select class="form-control" id="inputEmail4" placeholder="Email" ng-model="furniture" ng-options = "x for x in furniture_type" required>
+
                                         <option value="">Select Furniture Type</option>
                                     </select> </div>
                                 <div class="form-group col-sm-12 col-md-3">
                                         <label for="inputPassword4" style="visibility: hidden">Password</label>
-                                        <input type="button" class="form-control btn btn-gold text-white" id="post_property" value="UPLOAD IMAGES" ng-click="addProperty()">
+                                        <input type = "file" file-model = "myFile" required/>
                                     </div>    
                                 <!-- <div class="col-sm-0 col-md-6"></div> -->
                                 <div class="form-group col-sm-12 col-md-3 d-block ml-auto mr-0">
                                     <label for="inputPassword4" style="visibility: hidden">Password</label>
-                                    <input type="button" class="form-control btn btn-gold text-white" id="post_property" value="POST" ng-click="addProperty()">
+                                    <input type="button" class="form-control btn btn-gold text-white" id="post_property" value="POST" ng-click="postProperty()">
                                 </div>
                             </div>
                         </form>
