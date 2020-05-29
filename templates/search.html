@@ -25,13 +25,13 @@
             <div class="col-md-12">
                 <div class="container-fluid">
                     <div class="row mb-5" id="items">
-                        <div class="col-xs-12 col-sm-6 col-md-3 mb-2" ng-repeat="item in search">
+                        <div class="col-xs-12 col-sm-6 col-md-3 mb-2" ng-repeat="item in totalproperty">
                             <div class="card animated zoomIn delay-1s">
                                 <div class="card-heading text-center">
                                     <img src="assets/img/home/sample-listing-img.PNG" class="img-fluid w-100">
                                 </div>
                                 <div class="card-body">
-                                    <h6 class="text-uppercase">THREE BEDROOM APARTMENT EZDAN</h6>
+                                    <h6 class="text-uppercase">{{item.property_name}}</h6>
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-8 col-md-8">
                                             <div class="row">
