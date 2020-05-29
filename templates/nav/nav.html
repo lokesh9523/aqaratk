@@ -2,7 +2,7 @@
     <div class="row bg-maroon">
         <div class="col-md-12">
             <div class="container">
-                <div class="row py-2">
+                <div class="row py-2" id="top_row">
                     <div class="col-xs-12 col-md-4">
                         <a href="#" data-toggle="modal" data-target="#loginModal" class="text-white text-uppercase"><small>Login</small></a> <span class="text-white mx-3 vertical-text-bottom"><small>|</small></span>
                         <a href="#" data-toggle="modal" data-target="#registerModal" class="text-white text-uppercase"><small>Register</small></a>
@@ -10,7 +10,15 @@
                     <div class="col-xs-12 col-md-8 text-md-right text-xs-left">
                         <span class="fa fa-phone text-white mr-2 vertical-text-bottom"></span><a href="tel:12345678" class="text-white text-uppercase mr-4"><small>(+974) 1234 5678</small></a>
                         <span class="fa fa-map-marker text-white mr-2 vertical-text-bottom"></span><small class="text-white">Westbay, Doha, Qatar</small>
+                        <!-- <span class="ml-2">
+                        <small>
+                            <select id="language" ng-model="langType" ng-options = "x.language for x in languages">
+                                <option value=""></option>
+                            </select>
+                        </small>
+                        </span> -->
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -20,7 +28,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white py-4">
     <div class="container">
-        <a class="navbar-brand" href="index.html"><img src="assets/img/main/logo.PNG" class="img-fluid" width="200"></a>
+        <a class="navbar-brand" href="/"><img src="assets/img/main/logo.PNG" class="img-fluid" width="200"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -31,10 +39,10 @@
                     <span class="mr-3"><small class="text-white border-bottom-maroon">&mdash;&mdash;&mdash;&mdash;</small></span>
                 </li>
                 <li class="nav-item text-uppercase">
-                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item text-uppercase">
-                    <a class="nav-link" href="#">About us</a>
+                    <a class="nav-link" href="/about">About us</a>
                 </li>
                 <li class="nav-item dropdown text-uppercase">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -50,9 +58,9 @@
                         <a class="dropdown-item" href="#">Shared Accomodation</a>
                     </div>
                 </li>
-                <li class="nav-item text-uppercase">
+                <!-- <li class="nav-item text-uppercase">
                     <a class="nav-link" href="#">Listings</a>
-                </li>
+                </li> -->
                 <!-- <li class="nav-item text-uppercase">
                     <a class="nav-link" href="#">Agents</a>
                 </li> -->
@@ -60,10 +68,10 @@
                     <a class="nav-link" href="#">Blog</a>
                 </li>
                 <li class="nav-item text-uppercase">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="/contact">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-maroon px-4 text-white" href="post">Post Property</a>
+                    <a class="nav-link btn btn-maroon px-4 text-white" href="/post">Post Property</a>
                 </li>
             </ul>
         </div>

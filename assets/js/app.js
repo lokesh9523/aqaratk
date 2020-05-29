@@ -39,20 +39,33 @@ app.directive('fileModel', ['$parse', function ($parse) {
 }]);
 app.config(function ($routeProvider, $locationProvider) {
     $routeProvider
-        .when("/", {
-            templateUrl: "templates/main.html",
-            controller: 'journalGlobalController'
-        })
-        .when("/search", {
-            templateUrl: "templates/search.html",
-            controller: 'journalGlobalController'
-        })
-        .when("/post", {
-            templateUrl: "templates/post/post_property.html",
-            controller: 'propertyController'
-        })
-    $locationProvider
-        .html5Mode(true);
+    .when("/", {
+      templateUrl : "templates/main.html",
+      controller: 'journalGlobalController'
+    })
+    .when("/search", {
+      templateUrl : "templates/search.html",
+      controller: 'journalGlobalController'
+    })
+    .when("/post", {
+        templateUrl : "templates/post/post_property.html",
+        controller: 'propertyController'
+      })
+    .when("/about", {
+        templateUrl : "templates/about.html",
+        controller: 'journalGlobalController'
+    })
+    .when("/contact", {
+        templateUrl : "templates/contact.html",
+        controller: 'journalGlobalController'
+    })
+    .when("/property", {
+        templateUrl : "templates/properties/properties.html",
+        controller: 'journalGlobalController'
+    })
+      $locationProvider.html5Mode(true)
+    })
+
 
 });
 
@@ -99,6 +112,25 @@ app.controller("journalGlobalController", ["$scope", "loginService", "propertySe
 
     $scope.search = [1, 2, 3, 4, 5, 6, 7, 8];
 
+
+//     $scope.districts = ['Al Jasrah', 'Al Bidda', 'Fereej Mohamed Bin Jasim', 'Mushayrib', 'Al Najada', 'Barahat Al Jufairi', 'Fereej Al Asmakh', 'Old Al Ghanim', 'Al Souq', 'Wadi Al Sail', 'Rumeilah', 'Fereej Abdel Aziz', 'Ad Dawhah al Jadidah', 'Old Al Ghanim', 'Al Rufaa', 'Old Al Hitmi', 'As Salatah', 'Al Mirqab', 'Doha Port', 'Fereej Bin Mahmoud', 'Rawdat Al Khail', 'Fereej Bin Durham', 'Al Mansoura', 'Najma', 'Umm Ghuwailina', 'Al Khulaifat', 'Ras Abu Aboud', 'Duhail', 'Umm Lekhba', 'Madinat Khalifa North', 'Dahl Al Hamam', 'Al Markhiya', 'Madinat Khalifa South', 'Fereej Kulaib', 'Al Messila', 'Fereej Bin Omran', 'New Al Hitmi', 'Hamad Medical City', 'Al Sadd', 'New Al Mirqab', 'Fereej Al Nasr', 'New Salatah', 'Nuaija', 'Al Hilal', 'Old Airport', 'Al Thumama', 'Doha International Airport', 'Zone 50', 'Industrial Area', 'Zone 58', 'Al Dafna', 'Al Qassar', 'Onaiza', 'Lejbailat', 'Leqtaifiya', 'Hazm Al Markhiya', 'Jelaiah', 'Al Tarfa', 'Jeryan Nejaima'];
+
+//     $scope.property_type = ['Apartment', 'Villa', 'Compound', 'Hotel Appartments', 'Office Space', 'Shop', 'Storehouse', 'Show Room', 'Residential Building', 'Commercial Building', 'Administrative Building', 'Tower', 'Staff Accommodation'];
+
+    $scope.num_bedrooms = [1, 2, 3, 'Villa'];
+
+    $scope.furniture_type = ['Furnished', 'Unfurnished']
+
+
+//     $scope.searchItem = function () {
+
+//         window.location.href = "/search";
+//     }
+
+    $scope.languages=[{'language': 'En', value: 'English'}, {'language': 'Ar', value: 'Arabic'}]
+
+//     $scope.langType = $scope.languages[0];
+        
     $scope.searchItem = function () {
         var postParams = {
             'location_id': $scope.location_id ? $scope.location_id.id : '',
@@ -117,7 +149,6 @@ app.controller("journalGlobalController", ["$scope", "loginService", "propertySe
     $scope.num_bedrooms = [1, 2, 3, 4, 5, 6];
 
     $scope.furniture_type = ['Semi Furnished', 'Fully Furnished']
-
 
 }]);
 
@@ -327,4 +358,5 @@ app.service('propertyService', function ($http, $q) {
         }
     }
 })
+
 
