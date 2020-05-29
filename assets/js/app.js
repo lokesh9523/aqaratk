@@ -38,13 +38,17 @@ app.config(function($routeProvider, $locationProvider) {
         controller: 'journalGlobalController'
       })
     .when("/about", {
-    templateUrl : "templates/about.html",
-    controller: 'journalGlobalController'
+        templateUrl : "templates/about.html",
+        controller: 'journalGlobalController'
     })
     .when("/contact", {
         templateUrl : "templates/contact.html",
         controller: 'journalGlobalController'
-        })
+    })
+    .when("/property", {
+        templateUrl : "templates/properties/properties.html",
+        controller: 'journalGlobalController'
+    })
       $locationProvider.html5Mode(true)
     })
 
@@ -65,33 +69,9 @@ app.controller("journalGlobalController", ["$scope", "loginService", function ($
 
 
     $scope.searchItem = function () {
-        // if($scope.districts.value == null || $scope.property_type.value == null || $scope.num_bedrooms.value == null || $scope.furniture_type.value == null) {
-        //     alert("Please enter all the requirements");
 
-        //     window.location.href = "/index.html";
-        // }
-        
         window.location.href = "/search";
     }
-    // const langEl = document.querySelector('.language')
-    // const options = document.querySelectorAll('option')
-    // const descEl = document.querySelector('.descrption')
-    
-    // options.forEach(el => {
-    //     el.addEventListener('onChange', () => {
-    //         // langEl.querySelector('.active').classList.remove('active');
-    //         // el.classList.add('active');
-    
-    //         const attr = el.getAttribute('language');
-    //         console.log(attr)
-    //         descEl.textContent = data['attr'].descrption
-    //     })
-    // })
-    
-    // var data = {
-    //     'arabic':
-    //     {'descrption': 'عزز الجزر Lorem ipsum حسومات. أمارسها بحكمة! عليه أن يرسم إرادتنا المفتوحة التي يرفض منها. من في الدين ، ولكن من الأشياء. هو أيضا مخطئ؟ من قبل عائق مماثل لمن لمن؟'}
-    // }
 
     $scope.languages=[{'language': 'En', value: 'English'}, {'language': 'Ar', value: 'Arabic'}]
 
