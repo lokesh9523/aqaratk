@@ -64,10 +64,9 @@ app.config(function ($routeProvider, $locationProvider) {
         controller: 'journalGlobalController'
     })
       $locationProvider.html5Mode(true)
-    })
+    });
 
 
-});
 
 app.service('fileUpload', ['$http', '$q', function ($http, $q) {
     this.uploadFileToUrl = function (file, uploadUrl) {
@@ -141,7 +140,7 @@ app.controller("journalGlobalController", ["$scope", "loginService", "propertySe
         var api = 'http://localhost:3001/property/search';
         return propertyService.search(api, postParams).then(function (data) {
             $scope.totalproperty = data;
-            window.location = '#!search'
+            window.location.href = '/post'
         }).catch(function (error) {
             $scope.errorMessage = error.data;
         });
