@@ -1,4 +1,62 @@
-var app = angular.module("myApp", ['ngRoute',
+var translationsEN = {
+    LOGIN: 'Login',
+    REGISTER: 'Register',
+    LOCATION: 'Westbay, Doha, Qatar',
+    SUBTITLE : 'Subtitle',
+    QATAR: 'Qatar',
+    IDEAL: 'FIND YOUR IDEAL',
+    APARTMENT : 'APARTMENT',
+    RENT : 'FOR RENT',
+    WITH_US : 'WITH US',
+    we_are_realestate: 'WE ARE REALESTATE',
+    post: 'Post',
+    property : 'Property',
+    about_aqa : 'About Aqaratk',
+    know_more : 'KNOW MORE',
+    HOME : 'HOME',
+    Properties : 'Properties',
+    Contact : 'Contact',
+    about_us : 'About US',
+    Quick : 'Quick',
+    Links : 'Links',
+    follow_us : 'FOLLOW US',
+    our_loc : 'Our Location',
+    Copyright : 'Copyright',
+    all_rights : 'All Rights Reserved',
+    Mobile : 'Mobile'
+  };
+   
+  var translationsAR= {
+    LOGIN: ' تسجيل الدخول ',
+    REGISTER: 'تسجيل!',
+    LOCATION: 'الدوحة, قطرالخليج, الغربي',
+    SUBTITLE : 'العنوان الفرعي',
+    QATAR : 'دولة قطر',
+    IDEAL : 'تجد المثالي الخاص بك',
+    APARTMENT : 'شقة',
+    RENT : 'للإيجار',
+    WITH_US : 'معنا',
+    we_are_realestate : 'نحن عقارات',
+    post : 'ما بعد',
+    property : 'خاصية',
+    about_aqa : 'عن عقاراتك',
+    know_more : 'تعرف أكثر',
+    Home : 'منزل',
+    Properties : 'الخصائص',
+    Contact: 'اتصل',
+    about_us : 'معلومات عنا',
+    Quick : 'بسرعة',
+    Links: 'الروابط',
+    follow_us : 'تابعنا',
+    our_loc : 'موقعنا',
+    Copyright : 'حقوق النشر',
+    all_rights : 'كل الحقوق محفوظة',
+    Mobile : 'جوال'
+  };
+
+
+
+var app = angular.module("myApp", ['ngRoute','pascalprecht.translate',
     'ngResource', 'ngCookies']);
 
 
@@ -37,36 +95,16 @@ app.directive('fileModel', ['$parse', function ($parse) {
         }
     };
 }]);
-app.config(function ($routeProvider, $locationProvider) {
-    $routeProvider
-    .when("/", {
-      templateUrl : "templates/main.html",
-      controller: 'journalGlobalController'
-    })
-    .when("/search", {
-      templateUrl : "templates/search.html",
-      controller: 'journalGlobalController'
-    })
-    .when("/post", {
-        templateUrl : "templates/post/post_property.html",
-        controller: 'propertyController'
-      })
-    .when("/about", {
-        templateUrl : "templates/about.html",
-        controller: 'journalGlobalController'
-    })
-    .when("/contact", {
-        templateUrl : "templates/contact.html",
-        controller: 'journalGlobalController'
-    })
-    .when("/property", {
-        templateUrl : "templates/properties/properties.html",
-        controller: 'journalGlobalController'
-    })
-      $locationProvider.html5Mode(true)
-    });
 
-
+app.config(['$translateProvider', function ($translateProvider) {
+    // add translation tables
+    $translateProvider.translations('en', translationsEN);
+    $translateProvider.translations('ar', translationsAR);
+    $translateProvider.fallbackLanguage('en');
+    $translateProvider.preferredLanguage('en');
+    $translateProvider.useSanitizeValueStrategy('escape');
+  }]);
+   
 
 app.service('fileUpload', ['$http', '$q', function ($http, $q) {
     this.uploadFileToUrl = function (file, uploadUrl) {
@@ -89,7 +127,16 @@ app.service('fileUpload', ['$http', '$q', function ($http, $q) {
     }
 }
 ]);
-app.controller("journalGlobalController", ["$scope", "loginService", "propertyService", function ($scope, loginService, propertyService) {
+app.controller("journalGlobalController", ["$translate", "$scope", "loginService", "propertyService", function ($translate,$scope, loginService, propertyService) {
+
+    // $scope.listOfLanguages = ['AR', 'En'];
+    
+    $scope.changeLanguage = function (langKey) {
+        $translate.use(langKey);
+      };
+    
+    
+    
     // Type Code here
     var api = 'http://localhost:3001/property/types'
     propertyService.getPropertyTypes(api).then(function (data) {

@@ -4,19 +4,28 @@
             <div class="container">
                 <div class="row py-2" id="top_row">
                     <div class="col-xs-12 col-md-4">
-                        <a href="#" data-toggle="modal" data-target="#loginModal" class="text-white text-uppercase"><small>Login</small></a> <span class="text-white mx-3 vertical-text-bottom"><small>|</small></span>
-                        <a href="#" data-toggle="modal" data-target="#registerModal" class="text-white text-uppercase"><small>Register</small></a>
+                        <!-- <a href="#" data-toggle="modal" data-target="#loginModal" class="text-white text-uppercase"><small>Login</small></a> -->
+                        <a href="#" data-toggle="modal" data-target="#loginModal" class="text-white"><small>{{'LOGIN'|translate}}</small></a>
+                        <span class="text-white mx-3 vertical-text-bottom"><small>|</small></span>
+                        <a href="#" data-toggle="modal" data-target="#registerModal" class="text-white text-uppercase"><small>{{'REGISTER' | translate}}</small></a>
+                        <a href="#" ng-if="isloggedIn" ng-click="logout()" class="text-white text-uppercase"><small>Logout</small></a>
                     </div>
                     <div class="col-xs-12 col-md-8 text-md-right text-xs-left">
                         <span class="fa fa-phone text-white mr-2 vertical-text-bottom"></span><a href="tel:12345678" class="text-white text-uppercase mr-4"><small>(+974) 1234 5678</small></a>
-                        <span class="fa fa-map-marker text-white mr-2 vertical-text-bottom"></span><small class="text-white">Westbay, Doha, Qatar</small>
-                        <!-- <span class="ml-2">
-                        <small>
-                            <select id="language" ng-model="langType" ng-options = "x.language for x in languages">
+                        <span class="fa fa-map-marker text-white mr-2 vertical-text-bottom"></span><small class="text-white">Westbay, Doha, {{'Qatar' | translate}}</small>
+                        <span>
+                       <!-- <small>
+                             <select id="language" ng-model="langType" ng-options = "x.language for x in languages">
                                 <option value=""></option>
-                            </select>
+                            </select> 
+                        </small> -->
+                        <small>
+                        <div>
+                            <button ng-click="changeLanguage('ar')" translate="AR"></button>
+                            <button ng-click="changeLanguage('en')" translate="EN"></button>
+                          </div>
                         </small>
-                        </span> -->
+                        </span>
                     </div>
                     
                 </div>
@@ -39,14 +48,14 @@
                     <span class="mr-3"><small class="text-white border-bottom-maroon">&mdash;&mdash;&mdash;&mdash;</small></span>
                 </li>
                 <li class="nav-item text-uppercase">
-                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="/">{{'Home' | translate}}</a>
                 </li>
                 <li class="nav-item text-uppercase">
-                    <a class="nav-link" href="/about">About us</a>
+                    <a class="nav-link" href="/about">{{'about_us' | translate}}</a>
                 </li>
                 <li class="nav-item dropdown text-uppercase">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Properties
+                        {{'Properties' | translate}}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Apartment</a>
@@ -64,14 +73,14 @@
                 <!-- <li class="nav-item text-uppercase">
                     <a class="nav-link" href="#">Agents</a>
                 </li> -->
-                <li class="nav-item text-uppercase">
+                <!-- <li class="nav-item text-uppercase">
                     <a class="nav-link" href="#">Blog</a>
-                </li>
+                </li> -->
                 <li class="nav-item text-uppercase">
-                    <a class="nav-link" href="/contact">Contact</a>
+                    <a class="nav-link" href="/contact">{{'Contact' | translate}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-maroon px-4 text-white" href="/post">Post Property</a>
+                    <a class="nav-link btn btn-maroon px-4 text-white" href="/post">{{'post' | translate}} {{'property' | translate}}</a>
                 </li>
             </ul>
         </div>
@@ -102,7 +111,7 @@
                         <input type="password" class="form-control" id="login_password" name="password" ng-model="password" required>
                     </div>
                     <input class="btn btn-primary text-white" type="submit" name="login" value="Login" ng-click="submitLogin()">
-                    <a href="#"><small><span class="pt-4 float-right">Forgot password</span></small></a>
+                    <a href="/forgot_password"><small><span class="pt-4 float-right">Forgot password</span></small></a>
                 </form>
                 <div ng-if="errorMessage" style="color:red">{{ errorMessage }}</div>
             </div>
