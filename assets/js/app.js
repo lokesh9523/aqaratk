@@ -16,12 +16,12 @@ app.directive('footerFile', function () {
     };
 });
 
-app.directive('searchBar', function () {
-    return {
-        restrict: 'E',
-        templateUrl: 'templates/search/search.html',
-    };
-});
+// app.directive('searchBar', function () {
+//     return {
+//         restrict: 'E',
+//         templateUrl: 'templates/search/search.html',
+//     };
+// });
 app.directive('fileModel', ['$parse', function ($parse) {
     return {
         restrict: 'A',
@@ -39,32 +39,32 @@ app.directive('fileModel', ['$parse', function ($parse) {
 }]);
 app.config(function ($routeProvider, $locationProvider) {
     $routeProvider
-    .when("/", {
-      templateUrl : "templates/main.html",
-      controller: 'journalGlobalController'
-    })
-    .when("/search", {
-      templateUrl : "templates/search.html",
-      controller: 'journalGlobalController'
-    })
-    .when("/post", {
-        templateUrl : "templates/post/post_property.html",
-        controller: 'propertyController'
-      })
-    .when("/about", {
-        templateUrl : "templates/about.html",
-        controller: 'journalGlobalController'
-    })
-    .when("/contact", {
-        templateUrl : "templates/contact.html",
-        controller: 'journalGlobalController'
-    })
-    .when("/property", {
-        templateUrl : "templates/properties/properties.html",
-        controller: 'journalGlobalController'
-    })
-      $locationProvider.html5Mode(true)
-    });
+        .when("/", {
+            templateUrl: "templates/main.html",
+            controller: 'journalGlobalController'
+        })
+        .when("/search", {
+            templateUrl: "templates/search.html",
+            controller: 'searchController'
+        })
+        .when("/post", {
+            templateUrl: "templates/post/post_property.html",
+            controller: 'propertyController'
+        })
+        .when("/about", {
+            templateUrl: "templates/about.html",
+            controller: 'journalGlobalController'
+        })
+        .when("/contact", {
+            templateUrl: "templates/contact.html",
+            controller: 'journalGlobalController'
+        })
+        .when("/property", {
+            templateUrl: "templates/properties/properties.html",
+            controller: 'journalGlobalController'
+        })
+    $locationProvider.html5Mode(true)
+});
 
 
 
@@ -112,38 +112,49 @@ app.controller("journalGlobalController", ["$scope", "loginService", "propertySe
     $scope.search = [1, 2, 3, 4, 5, 6, 7, 8];
 
 
-//     $scope.districts = ['Al Jasrah', 'Al Bidda', 'Fereej Mohamed Bin Jasim', 'Mushayrib', 'Al Najada', 'Barahat Al Jufairi', 'Fereej Al Asmakh', 'Old Al Ghanim', 'Al Souq', 'Wadi Al Sail', 'Rumeilah', 'Fereej Abdel Aziz', 'Ad Dawhah al Jadidah', 'Old Al Ghanim', 'Al Rufaa', 'Old Al Hitmi', 'As Salatah', 'Al Mirqab', 'Doha Port', 'Fereej Bin Mahmoud', 'Rawdat Al Khail', 'Fereej Bin Durham', 'Al Mansoura', 'Najma', 'Umm Ghuwailina', 'Al Khulaifat', 'Ras Abu Aboud', 'Duhail', 'Umm Lekhba', 'Madinat Khalifa North', 'Dahl Al Hamam', 'Al Markhiya', 'Madinat Khalifa South', 'Fereej Kulaib', 'Al Messila', 'Fereej Bin Omran', 'New Al Hitmi', 'Hamad Medical City', 'Al Sadd', 'New Al Mirqab', 'Fereej Al Nasr', 'New Salatah', 'Nuaija', 'Al Hilal', 'Old Airport', 'Al Thumama', 'Doha International Airport', 'Zone 50', 'Industrial Area', 'Zone 58', 'Al Dafna', 'Al Qassar', 'Onaiza', 'Lejbailat', 'Leqtaifiya', 'Hazm Al Markhiya', 'Jelaiah', 'Al Tarfa', 'Jeryan Nejaima'];
+    //     $scope.districts = ['Al Jasrah', 'Al Bidda', 'Fereej Mohamed Bin Jasim', 'Mushayrib', 'Al Najada', 'Barahat Al Jufairi', 'Fereej Al Asmakh', 'Old Al Ghanim', 'Al Souq', 'Wadi Al Sail', 'Rumeilah', 'Fereej Abdel Aziz', 'Ad Dawhah al Jadidah', 'Old Al Ghanim', 'Al Rufaa', 'Old Al Hitmi', 'As Salatah', 'Al Mirqab', 'Doha Port', 'Fereej Bin Mahmoud', 'Rawdat Al Khail', 'Fereej Bin Durham', 'Al Mansoura', 'Najma', 'Umm Ghuwailina', 'Al Khulaifat', 'Ras Abu Aboud', 'Duhail', 'Umm Lekhba', 'Madinat Khalifa North', 'Dahl Al Hamam', 'Al Markhiya', 'Madinat Khalifa South', 'Fereej Kulaib', 'Al Messila', 'Fereej Bin Omran', 'New Al Hitmi', 'Hamad Medical City', 'Al Sadd', 'New Al Mirqab', 'Fereej Al Nasr', 'New Salatah', 'Nuaija', 'Al Hilal', 'Old Airport', 'Al Thumama', 'Doha International Airport', 'Zone 50', 'Industrial Area', 'Zone 58', 'Al Dafna', 'Al Qassar', 'Onaiza', 'Lejbailat', 'Leqtaifiya', 'Hazm Al Markhiya', 'Jelaiah', 'Al Tarfa', 'Jeryan Nejaima'];
 
-//     $scope.property_type = ['Apartment', 'Villa', 'Compound', 'Hotel Appartments', 'Office Space', 'Shop', 'Storehouse', 'Show Room', 'Residential Building', 'Commercial Building', 'Administrative Building', 'Tower', 'Staff Accommodation'];
+    //     $scope.property_type = ['Apartment', 'Villa', 'Compound', 'Hotel Appartments', 'Office Space', 'Shop', 'Storehouse', 'Show Room', 'Residential Building', 'Commercial Building', 'Administrative Building', 'Tower', 'Staff Accommodation'];
 
     $scope.num_bedrooms = [1, 2, 3, 'Villa'];
 
     $scope.furniture_type = ['Furnished', 'Unfurnished']
 
 
-//     $scope.searchItem = function () {
+    //     $scope.searchItem = function () {
 
-//         window.location.href = "/search";
-//     }
+    //         window.location.href = "/search";
+    //     }
 
-    $scope.languages=[{'language': 'En', value: 'English'}, {'language': 'Ar', value: 'Arabic'}]
+    $scope.languages = [{ 'language': 'En', value: 'English' }, { 'language': 'Ar', value: 'Arabic' }]
 
-//     $scope.langType = $scope.languages[0];
-        
+    //     $scope.langType = $scope.languages[0];
+
     $scope.searchItem = function () {
-        var postParams = {
-            'location_id': $scope.location_id ? $scope.location_id.id : '',
-            'property_id': $scope.property_id ? $scope.property_id.id : '',
-            'no_of_bed_rooms': $scope.no_of_bed_rooms ? $scope.no_of_bed_rooms : '',
-            'furniture': $scope.furniture ? $scope.furniture : ''
-        };
-        var api = 'http://localhost:3001/property/search';
-        return propertyService.search(api, postParams).then(function (data) {
-            $scope.totalproperty = data;
-            window.location.href = '/post'
-        }).catch(function (error) {
-            $scope.errorMessage = error.data;
-        });
+        console.log(window.location.search,"==================");
+        console.log($scope.location_id,"==",$scope.property_id,"---",$scope.no_of_bed_rooms,"===",$scope.furniture)
+        if($scope.location_id || $scope.property_id || $scope.no_of_bed_rooms || $scope.furniture){
+            console.log("iam here")
+            var postParams = {
+                'location_id': $scope.location_id ? $scope.location_id.id : '',
+                'property_id': $scope.property_id ? $scope.property_id.id : '',
+                'no_of_bed_rooms': $scope.no_of_bed_rooms ? $scope.no_of_bed_rooms : '',
+                'furniture': $scope.furniture ? $scope.furniture : ''
+            };
+    
+            var api = 'http://localhost:3001/property/search';
+            // let query= '';
+            // if($scope.location_id){query = query + }
+            // return propertyService.search(api, postParams).then(function (data) {
+            //     $scope.totalproperty = data;
+             window.location.href = '/search?location_id=' + postParams.location_id + '&property_id=' + postParams.property_id + '&no_of_bed_rooms' + postParams.no_of_bed_rooms + '&furniture=' + postParams.furniture;
+            // }).catch(function (error) {
+            //     $scope.errorMessage = error.data;
+            // });
+
+        }else{
+            alert("Select Atleast One Field")
+        }
     }
     $scope.num_bedrooms = [1, 2, 3, 4, 5, 6];
 
@@ -168,7 +179,7 @@ app.controller("loginController", ['$scope', 'loginService', '$cookies', functio
             .then(function (data) {
                 $cookies.put("access_token", data.token);
                 $cookies.put("login_id", data.id);
-                console.log(data, "====================")
+                window.location.href = "/";
             })
             .catch(function (error) {
                 console.log(error)
@@ -195,6 +206,7 @@ app.controller("registerController", ["$scope", "registerService", function ($sc
             .then(function (data) {
                 console.log(data, "===================")
                 alert("Registered Successfully Please Login");
+                window.location.href='/';
             })
             .catch(function (error) {
                 $scope.errorMessage = error.data;
@@ -225,29 +237,40 @@ app.controller("propertyController", ["$scope", "propertyService", "$cookies", "
     });
 
 
-    $scope.login_id = $cookies.get('login_id')
+    $scope.login_id = $cookies.get('login_id');
     $scope.postProperty = function () {
         $scope.login_id = $cookies.get('login_id')
-        var postParams = {
-            'login_id': $scope.login_id,
-            'location_id': $scope.location_id.id,
-            'property_id': $scope.property_id.id,
-            'no_of_bed_rooms': $scope.no_of_bed_rooms,
-            'furniture': $scope.furniture
-        };
-
-        var file = $scope.myFile;
-        var api = 'http://localhost:3001/property/1';
-        propertyService.postProperty(api, postParams)
-            .then(function (data) {
-                console.log(data, "=======")
-                var uploadUrl = "http://localhost:3001/property/" + $scope.login_id + "/1";
-                console.log(uploadUrl)
-                fileUpload.uploadFileToUrl(file, uploadUrl);
-                console.log(data, "=======")
-            }).catch(function (error) {
-                $scope.errorMessage = error.data;
-            });
+        if($scope.login_id){
+           
+            
+            var file = $scope.myFile;
+            if($scope.location&&$scope.property_id&&$scope.no_of_bed_rooms&&$scope.furniture&&file&&$scope.price){ var postParams = {
+                'login_id': $scope.login_id,
+                'location_id': $scope.location_id.id,
+                'property_id': $scope.property_id.id,
+                'no_of_bed_rooms': $scope.no_of_bed_rooms,
+                'furniture': $scope.furniture,
+                'price':$scope.price
+            };
+                var api = 'http://localhost:3001/property/1';
+                propertyService.postProperty(api, postParams)
+                    .then(function (data) {
+                        console.log(data, "=======")
+                        var uploadUrl = "http://localhost:3001/property/" + $scope.login_id + "/"+data.id;
+                        console.log(uploadUrl)
+                        fileUpload.uploadFileToUrl(file, uploadUrl);
+                        alert("Property Posted Sucessfully")
+                    }).catch(function (error) {
+                        $scope.errorMessage = error.data;
+                    });
+            }else{
+                alert("Please Enter All the fields")
+            }
+            
+        }else{
+            alert("Please Login")
+        }
+        
     }
     // $scope.uploadimage = function (id, file) {
     //     console.log(id, file, "==================")
@@ -256,7 +279,99 @@ app.controller("propertyController", ["$scope", "propertyService", "$cookies", "
 
     // }
 }])
+app.controller("searchController", ['$scope', 'propertyService', '$cookies', function ($scope, propertyService, $cookies) {
+    
+    
+    var api = 'http://localhost:3001/property/types'
+    propertyService.getPropertyTypes(api).then(function (data) {
+        $scope.property = data
 
+    }).catch(function (error) {
+        $scope.errorMessage = error.data;
+    });
+
+    // $scope.location = [];
+
+    var locationapi = 'http://localhost:3001/location'
+    propertyService.getLocation(locationapi).then(function (data) {
+        $scope.location = data
+
+    }).catch(function (error) {
+        $scope.errorMessage = error.data;
+    });
+    $scope.num_bedrooms = [1, 2, 3, 4, 5, 6];
+
+    $scope.furniture_type = ['Semi Furnished', 'Fully Furnished']
+    const urlParams = new URLSearchParams(window.location.search);
+    let property_id = urlParams.get('property_id');
+    let location_id = urlParams.get('location_id');
+    let no_of_bed_rooms = urlParams.get('no_of_bed_rooms') ;
+    let furniture = urlParams.get('furniture');
+    if(urlParams.get('property_id') || urlParams.get('location_id') || urlParams.get('no_of_bed_rooms') || urlParams.get('furniture')){
+
+        // if(!$scope.property_id){console.log("imhere");$scope.property_id = ""};
+        // if(!$scope.location_id){$scope.location_id = ""};
+        // if(!$scope.no_of_bed_rooms){$scope.no_of_bed_rooms = ""};
+        // if(!$scope.furniture){$scope.furniture = ""}
+        var postParams = {
+            'location_id': location_id ? location_id : '',
+            'property_id': property_id ? property_id : '',
+            'no_of_bed_rooms': no_of_bed_rooms ? no_of_bed_rooms : '',
+            'furniture': furniture ? furniture : ''
+        };
+        console.log($scope.property_id,$scope.location_id,postParams)
+        var searchapi = 'http://localhost:3001/property/search';
+         return propertyService.search(searchapi, postParams).then(function (data) {
+                $scope.totalproperty = data;
+                $scope.totalproperty.forEach(element=>{
+                    if(element.images){
+                        element.images = angular.fromJson(element.images);
+                        // if(typeof element.images['0'] === 'string'){
+                        //     console.log("iam ia string")
+                        //     element.images['0'] = JSON.parse(element.images['0']);
+                        //     console.log(typeof element.images['0'])
+                        // }
+                    }
+                })
+            }).catch(function (error) {
+                $scope.errorMessage = error.data;
+            });
+    }else{
+
+    }
+    $scope.searchItem = function () {
+        console.log($scope.location_id,"==",$scope.property_id,"---",$scope.no_of_bed_rooms,"===",$scope.furniture)
+        if($scope.location_id || $scope.property_id || $scope.no_of_bed_rooms || $scope.furniture){
+            console.log("iam here")
+            var postParams = {
+                'location_id': $scope.location_id ? $scope.location_id.id : '',
+                'property_id': $scope.property_id ? $scope.property_id.id : '',
+                'no_of_bed_rooms': $scope.no_of_bed_rooms ? $scope.no_of_bed_rooms : '',
+                'furniture': $scope.furniture ? $scope.furniture : ''
+            };
+            console.log($scope.property_id,$scope.location_id,postParams)
+            var searchapi = 'http://localhost:3001/property/search';
+             return propertyService.search(searchapi, postParams).then(function (data) {
+                    $scope.totalproperty = data;
+                    $scope.totalproperty.forEach(element=>{
+                        if(element.images){
+                            element.images = angular.fromJson(element.images);
+                            // if(typeof element.images['0'] === 'string'){
+                            //     console.log("iam ia string")
+                            //     element.images['0'] = JSON.parse(element.images['0']);
+                            //     console.log(typeof element.images['0'])
+                            // }
+                        }
+                    })
+                }).catch(function (error) {
+                    $scope.errorMessage = error.data;
+                });
+
+        }else{
+            alert("Select Atleast One Field")
+        }
+    }
+}])
 app.service('loginService', function ($http, $q) {
     return {
         authenticateUser: function (api, postParams) {
