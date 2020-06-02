@@ -91,7 +91,7 @@ app.service('fileUpload', ['$http', '$q', function ($http, $q) {
 ]);
 app.controller("journalGlobalController", ["$scope", "loginService", "propertyService", function ($scope, loginService, propertyService) {
     // Type Code here
-    var api = 'http://localhost:3001/property/types'
+    var api = 'http://15.206.186.93:3001/property/types'
     propertyService.getPropertyTypes(api).then(function (data) {
         $scope.property = data
 
@@ -101,7 +101,7 @@ app.controller("journalGlobalController", ["$scope", "loginService", "propertySe
 
     // $scope.location = [];
 
-    var locationapi = 'http://localhost:3001/location'
+    var locationapi = 'http://15.206.186.93:3001/location'
     propertyService.getLocation(locationapi).then(function (data) {
         $scope.location = data
 
@@ -142,7 +142,7 @@ app.controller("journalGlobalController", ["$scope", "loginService", "propertySe
                 'furniture': $scope.furniture ? $scope.furniture : ''
             };
     
-            var api = 'http://localhost:3001/property/search';
+            var api = 'http://15.206.186.93:3001/property/search';
             // let query= '';
             // if($scope.location_id){query = query + }
             // return propertyService.search(api, postParams).then(function (data) {
@@ -173,7 +173,7 @@ app.controller("loginController", ['$scope', 'loginService', '$cookies', functio
             'password': $scope.password
         };
 
-        var api = 'http://localhost:3001/login';
+        var api = 'http://15.206.186.93:3001/login';
 
         return loginService.authenticateUser(api, postParams)
             .then(function (data) {
@@ -200,7 +200,7 @@ app.controller("registerController", ["$scope", "registerService", function ($sc
             'name': $scope.name
         };
 
-        var api = 'http://localhost:3001/register';
+        var api = 'http://15.206.186.93:3001/register';
 
         return registerService.registerUser(api, postParams)
             .then(function (data) {
@@ -218,7 +218,7 @@ app.controller("propertyController", ["$scope", "propertyService", "$cookies", "
     $scope.num_bedrooms = [1, 2, 3, 4, 5, 6];
 
     $scope.furniture_type = ['Semi Furnished', 'Fully Furnished']
-    var api = 'http://localhost:3001/property/types'
+    var api = 'http://15.206.186.93:3001/property/types'
     propertyService.getPropertyTypes(api).then(function (data) {
         $scope.property = data
 
@@ -228,7 +228,7 @@ app.controller("propertyController", ["$scope", "propertyService", "$cookies", "
 
     // $scope.location = [];
 
-    var locationapi = 'http://localhost:3001/location'
+    var locationapi = 'http://15.206.186.93:3001/location'
     propertyService.getLocation(locationapi).then(function (data) {
         $scope.location = data
 
@@ -252,11 +252,11 @@ app.controller("propertyController", ["$scope", "propertyService", "$cookies", "
                 'furniture': $scope.furniture,
                 'price':$scope.price
             };
-                var api = 'http://localhost:3001/property/1';
+                var api = 'http://15.206.186.93:3001/property/1';
                 propertyService.postProperty(api, postParams)
                     .then(function (data) {
                         console.log(data, "=======")
-                        var uploadUrl = "http://localhost:3001/property/" + $scope.login_id + "/"+data.id;
+                        var uploadUrl = "http://15.206.186.93:3001/property/" + $scope.login_id + "/"+data.id;
                         console.log(uploadUrl)
                         fileUpload.uploadFileToUrl(file, uploadUrl);
                         alert("Property Posted Sucessfully")
@@ -282,7 +282,7 @@ app.controller("propertyController", ["$scope", "propertyService", "$cookies", "
 app.controller("searchController", ['$scope', 'propertyService', '$cookies', function ($scope, propertyService, $cookies) {
     
     
-    var api = 'http://localhost:3001/property/types'
+    var api = 'http://15.206.186.93:3001/property/types'
     propertyService.getPropertyTypes(api).then(function (data) {
         $scope.property = data
 
@@ -292,7 +292,7 @@ app.controller("searchController", ['$scope', 'propertyService', '$cookies', fun
 
     // $scope.location = [];
 
-    var locationapi = 'http://localhost:3001/location'
+    var locationapi = 'http://15.206.186.93:3001/location'
     propertyService.getLocation(locationapi).then(function (data) {
         $scope.location = data
 
@@ -320,7 +320,7 @@ app.controller("searchController", ['$scope', 'propertyService', '$cookies', fun
             'furniture': furniture ? furniture : ''
         };
         console.log($scope.property_id,$scope.location_id,postParams)
-        var searchapi = 'http://localhost:3001/property/search';
+        var searchapi = 'http://15.206.186.93:3001/property/search';
          return propertyService.search(searchapi, postParams).then(function (data) {
                 $scope.totalproperty = data;
                 $scope.totalproperty.forEach(element=>{
@@ -350,7 +350,7 @@ app.controller("searchController", ['$scope', 'propertyService', '$cookies', fun
                 'furniture': $scope.furniture ? $scope.furniture : ''
             };
             console.log($scope.property_id,$scope.location_id,postParams)
-            var searchapi = 'http://localhost:3001/property/search';
+            var searchapi = 'http://15.206.186.93:3001/property/search';
              return propertyService.search(searchapi, postParams).then(function (data) {
                     $scope.totalproperty = data;
                     $scope.totalproperty.forEach(element=>{
