@@ -2,22 +2,22 @@
 <div class="container my-4">
 <form action="/action_page.php">
 <div class="form-group">
-    <label for="fname">First Name</label>
+    <label for="fname">{{'first_name' | translate}}</label>
     <input type="text" class="form-control" id="fname" name="firstname">
 </div>
 <div class="form-group">
-    <label for="lname">Last Name</label>
+    <label for="lname">{{'last_name' | translate}}</label>
     <input type="text" class="form-control" id="lname" name="lastname">
 </div>
 <div class="form-group">
-    <label for="mail">Email</label>
+    <label for="mail">{{'email' | translate}}</label>
     <input type="email" class="form-control" id="email" name="email">
 </div>
     <div class="form-group">
-    <label for="subject">Subject</label>
+    <label for="subject">{{'subject' | translate}}</label>
     <textarea id="subject" class="form-control" name="subject" rows='8'></textarea>
 </div>
-    <input type="submit" class="btn btn-light text-dark " value="Submit">
+    <input type="submit" class="btn btn-light text-dark" value="{{'Submit' | translate}}">
   </form>
 </div>
 </div>

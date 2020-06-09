@@ -4,10 +4,10 @@
             <div class="d-flex align-items-center justify-content-center" style="background: url(assets/img/home/background.jpg); height: 75vh;">
                 <div class="container">
                     <div class="col-md-12">
-                        <h1 class="text-uppercase"><span class="text-white">{{'IDEAL' | translate}}</span><span class="text-gold"> {{'APARTMENT' | translate}}</span></h1>
+                        <h1 class="text-uppercase"><span class="text-white">{{'IDEAL' | translate}}</span></h1>
                     </div>
                     <div class="col-md-12">
-                        <h1 class="text-uppercase"><span class="text-gold">{{'RENT' | translate}}</span><span class="text-white"> {{'WITH_US' | translate}}</span></h1>
+                        <h1 class="text-uppercase"><span class="text-gold">{{'property' | translate}}</span><span class="text-white"> {{'WITH_US' | translate}}</span></h1>
                     </div>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                         <form>
                             <div class="form-row row text-white">
                                 <div class="form-group search_options col-md-6 col-sm-6 col-xs-12">
-                                    <label for="Location">Municipality</label>
+                                   <label for="Location">Municipality</label>
                                     <select class="form-control" id="location" placeholder="Select Municipality" ng-model="municipality_id" ng-change="change()" ng-options="x.display_name for x in municipality" required>
                                     <option value="">Select Municipality</option>
                                     </select>
@@ -36,26 +36,26 @@
                                     </select>
                                 </div>
                                 <div class="form-group search_options col-md-6 col-sm-6 col-xs-12">
-                                    <label for="inputPassword4">Property Type</label>
+                                    <label for="inputPassword4">{{'property_type' | translate}}</label>
                                     <select class="form-control" id="propertyType" placeholder="Property Type" ng-model="property_id" ng-options="x.display_name for x in property"required >
-                                    <option value="">Type of Property</option>
+                                    <option value="">{{'type_of_property' | translate}}</option>
                                     </select> </div>
                                 <div class="form-group search_options col-md-6 col-sm-6 col-xs-12">
-                                    <label for="inputPassword4">No. of bedrooms</label>
+                                    <label for="inputPassword4">{{'num_of_bed' | translate}}</label>
 
                                     <select class="form-control" id="inputEmail4" placeholder="Email" ng-model="no_of_bed_rooms" ng-options="x for x in num_bedrooms" required>
 
-                                    <option value="">No. of bedrooms</option>
+                                    <option value="">{{'bedroom_select' | translate}}</option>
                                     </select> </div>
                                 <div class="form-group search_options col-md-6 col-sm-6 col-xs-12">
-                                    <label for="inputPassword4">Furniture</label>
+                                    <label for="inputPassword4">{{'furniture' | translate}}</label>
                                     <select class="form-control" id="inputEmail4" placeholder="Email" ng-model="furniture" ng-options = "x for x in furniture_type" required>
 
-                                        <option value="">Select Furniture Type</option>
+                                        <option value="">{{'select_furniture' | translate}}</option>
                                     </select> </div>
                                     <div class="form-group search_options col-md-6 col-sm-6 col-xs-12">
-                                        <label for="username">Price</label>
-                                        <input type="text" class="form-control" id="login_username" placeholder="Enter the price" name="username" ng-model="price" required>
+                                        <label for="username">{{'price' | translate}}</label>
+                                        <input type="text" class="form-control" id="login_username" placeholder="{{'enter_price' | translate}}" name="username" ng-model="price" required>
                                     </div>
                                 <div class="form-group col-sm-12 col-md-3">
                                         <label for="inputPassword4" style="visibility: hidden">Password</label>
@@ -64,7 +64,7 @@
                                 <!-- <div class="col-sm-0 col-md-6"></div> -->
                                 <div class="form-group col-sm-12 col-md-3 d-block ml-auto mr-0">
                                     <label for="inputPassword4" style="visibility: hidden">Password</label>
-                                    <input type="button" class="form-control btn btn-gold text-white" id="post_property" value="POST" ng-click="postProperty()">
+                                    <input type="button" class="form-control btn btn-gold text-white" id="post_property" value="{{'post' | translate}}" ng-click="postProperty()">
                                 </div>
                             </div>
                         </form>
