@@ -133,6 +133,16 @@ app.controller("journalGlobalController", ["$translate", "$scope", "loginService
     
     $scope.changeLanguage = function (langKey) {
         $translate.use(langKey);
+        if(langKey == 'ar') {
+            console.log('Language is arabic');
+            document.getElementById('logo').setAttribute('src','assets/img/main/logo_ar.png');
+            document.getElementById('logo_white').setAttribute('src','assets/img/main/logo_white_ar.png');
+            
+        }
+        else {
+            document.getElementById('logo').setAttribute('src','assets/img/main/logo.png');
+            document.getElementById('logo_white').setAttribute('src','assets/img/main/logo-white.png');
+        }
       };
     
     
@@ -366,7 +376,7 @@ app.controller("searchController", ['$scope', 'propertyService', '$cookies', fun
             'no_of_bed_rooms': no_of_bed_rooms ? no_of_bed_rooms : '',
             'furniture': furniture ? furniture : ''
         };
-        console.log($scope.property_id,$scope.location_id,postParams)
+        // console.log($scope.property_id,$scope.location_id,postParams)
         var searchapi = 'http://15.206.186.93:3001/property/search';
          return propertyService.search(searchapi, postParams).then(function (data) {
                 $scope.totalproperty = data;
@@ -396,7 +406,7 @@ app.controller("searchController", ['$scope', 'propertyService', '$cookies', fun
                 'no_of_bed_rooms': $scope.no_of_bed_rooms ? $scope.no_of_bed_rooms : '',
                 'furniture': $scope.furniture ? $scope.furniture : ''
             };
-            console.log($scope.property_id,$scope.location_id,postParams)
+            // console.log($scope.property_id,$scope.location_id,postParams)
             var searchapi = 'http://15.206.186.93:3001/property/search';
              return propertyService.search(searchapi, postParams).then(function (data) {
                     $scope.totalproperty = data;
