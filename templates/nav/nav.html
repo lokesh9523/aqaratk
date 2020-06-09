@@ -58,13 +58,13 @@
                         {{'Properties' | translate}}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Apartment</a>
+                        <a class="dropdown-item" href="#">{{'APARTMENT' | translate}}</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Villa</a>
+                        <a class="dropdown-item" href="#">{{'villa' | translate}}</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Villa Apartment</a>
+                        <a class="dropdown-item" href="#">{{'villa_apartment' | translate}}</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Shared Accomodation</a>
+                        <a class="dropdown-item" href="#">{{'shared_accomodation' | translate}}</a>
                     </div>
                 </li>
                 <!-- <li class="nav-item text-uppercase">
@@ -111,7 +111,7 @@
                         <input type="password" class="form-control" id="login_password" name="password" ng-model="password" required>
                     </div>
                     <input class="btn btn-primary text-white" type="submit" name="login" value="{{'Login' | translate}}" ng-click="submitLogin()">
-                    <a href="/forgot_password"><small><span class="pt-4 float-right">{{'forgot_pwd' | translate}}</span></small></a>
+                    <a href="" ng-click = "forgetpassword()"><small><span class="pt-4 float-right">{{'forgot_pwd' | translate}}</span></small></a>
                 </form>
                 <div ng-if="errorMessage" style="color:red">{{ errorMessage }}</div>
             </div>

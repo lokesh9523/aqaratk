@@ -62,7 +62,12 @@ var translationsEN = {
     Login: 'Login',
     num: '+974 1234 5678',
     search: 'Search',
-    user_email: 'Username or Email'
+    user_email: 'Username or Email',
+    villa:'VILLA',
+    villa_apartment:'VILLA APARTMENT',
+    shared_accomodation:'SHARED ACCOMODATION',
+    area:'Area',
+    select_area:'Select Area'
   };
    
   var translationsAR= {
@@ -132,7 +137,12 @@ var translationsEN = {
     AR : 'عربي',
     num: '+974 1234 5678',
     search: 'بحث',
-    user_email : 'إسم المستخدم  أو الإيميل'
+    user_email : 'إسم المستخدم  أو الإيميل',
+    villa:'فيلا',
+    villa_apartment:'شقة فيلا',
+    shared_accomodation:'سكن مشترك',
+    area:'منطقة',
+    select_area:'حدد المنطقة'
   };
 
 var app = angular.module("myApp", ['ngRoute', 'pascalprecht.translate',
@@ -206,12 +216,17 @@ app.service('fileUpload', ['$http', '$q', function ($http, $q) {
     }
 }
 ]);
-app.controller("journalGlobalController", ["$translate", "$scope", "loginService", "propertyService", function ($translate, $scope, loginService, propertyService) {
-
+app.controller("journalGlobalController", ["$translate", "$scope", "loginService", "propertyService",'$cookies', function ($translate, $scope, loginService, propertyService,$cookies) {
+  
     // $scope.listOfLanguages = ['AR', 'En'];
-
+    // $cookies.put("language", 'en');
+    if($cookies.get('language')){
+        $translate.use($cookies.get('language'));
+        // $scope.changeLanguage($cookies.get('language'));
+    }
     $scope.changeLanguage = function (langKey) {
         $translate.use(langKey);
+        $cookies.put("language", langKey);
         if (langKey == 'ar') {
             console.log('Language is arabic');
             document.getElementById('login_text').style.float ='left';
@@ -221,7 +236,7 @@ app.controller("journalGlobalController", ["$translate", "$scope", "loginService
            
         }
         else {
-            document.getElementById('logo').setAttribute('src', 'assets/img/main/logo.png');
+            document.getElementById('logo').setAttribute('src', 'assets/img/main/logo.PNG');
             document.getElementById('logo_white').setAttribute('src', 'assets/img/main/logo-white.png');
         }
     };
@@ -297,6 +312,10 @@ app.controller("journalGlobalController", ["$translate", "$scope", "loginService
 
     $scope.furniture_type = ['Semi Furnished', 'Fully Furnished']
 
+    $scope.forgetpassword = function(){
+        window.location.href = "/forgot_password";
+
+    }
 }]);
 
 app.controller("loginController", ['$scope', 'loginService', '$cookies', function ($scope, loginService, $cookies) {
@@ -350,8 +369,21 @@ app.controller("registerController", ["$scope", "registerService", function ($sc
             });
     };
 }])
-app.controller("propertyController", ["$scope", "propertyService", "$cookies", "fileUpload", function ($scope, propertyService, $cookies, fileUpload) {
+app.controller("propertyController", ["$scope", "propertyService", "$cookies", "fileUpload","$translate", function ($scope, propertyService, $cookies, fileUpload,$translate) {
     // $scope.property = [];
+    $translate.use($cookies.get('language'));
+    if ($cookies.get('language') == 'ar') {
+        console.log('Language is arabic');
+        document.getElementById('login_text').style.float ='left';
+        document.getElementById('mobile_num').style.direction ='ltr';
+        document.getElementById('logo').setAttribute('src','assets/img/main/logo_ar.png');
+        document.getElementById('logo_white').setAttribute('src','assets/img/main/logo_white_ar.png');
+       
+    }
+    else {
+        document.getElementById('logo').setAttribute('src', 'assets/img/main/logo.PNG');
+        document.getElementById('logo_white').setAttribute('src', 'assets/img/main/logo-white.png');
+    }
     $scope.num_bedrooms = [1, 2, 3, 4, 5, 6];
 
     $scope.furniture_type = ['Semi Furnished', 'Fully Furnished']
@@ -421,9 +453,21 @@ app.controller("propertyController", ["$scope", "propertyService", "$cookies", "
     }
 
 }])
-app.controller("searchController", ['$scope', 'propertyService', '$cookies', function ($scope, propertyService, $cookies) {
-
-
+app.controller("searchController", ['$scope', 'propertyService', '$cookies','$translate',function ($scope, propertyService, $cookies,$translate) {
+    $translate.use($cookies.get('language'));
+    console.log($cookies.get('language'))
+    if ($cookies.get('language') === 'ar') {
+        console.log('Language is arabic');
+        document.getElementById('login_text').style.float ='left';
+        document.getElementById('mobile_num').style.direction ='ltr';
+        document.getElementById('logo').setAttribute('src','assets/img/main/logo_ar.png');
+        document.getElementById('logo_white').setAttribute('src','assets/img/main/logo_white_ar.png');
+       
+    }
+    else {
+        document.getElementById('logo').setAttribute('src', 'assets/img/main/logo.PNG');
+        document.getElementById('logo_white').setAttribute('src', 'assets/img/main/logo-white.png');
+    }
     var api = 'http://15.206.186.93:3001/property/types'
     propertyService.getPropertyTypes(api).then(function (data) {
         $scope.property = data

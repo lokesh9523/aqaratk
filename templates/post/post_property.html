@@ -24,15 +24,15 @@
                         <form>
                             <div class="form-row row text-white">
                                 <div class="form-group search_options col-md-6 col-sm-6 col-xs-12">
-                                   <label for="Location">Municipality</label>
+                                   <label for="Location">{{'municipality' | translate}}</label>
                                     <select class="form-control" id="location" placeholder="Select Municipality" ng-model="municipality_id" ng-change="change()" ng-options="x.display_name for x in municipality" required>
-                                    <option value="">Select Municipality</option>
+                                    <option value="">{{'select_municipality' | translate}}</option>
                                     </select>
                                 </div>
                                 <div class="form-group search_options col-md-6 col-sm-6 col-xs-12">
-                                    <label for="Location">Area</label>
+                                    <label for="Location">{{'area' | translate}}</label>
                                     <select class="form-control" id="location" placeholder="Select Area" ng-model="location_id"  ng-options="x.display_name for x in location" required>
-                                    <option value="">Select area</option>
+                                    <option value="">{{'select_area' | translate}}</option>
                                     </select>
                                 </div>
                                 <div class="form-group search_options col-md-6 col-sm-6 col-xs-12">
