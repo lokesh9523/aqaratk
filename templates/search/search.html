@@ -6,7 +6,17 @@
                     <div class="col-md-12">
                         <form>
                             <div class="form-row text-white">
-                                <div class="form-group search_options col-sm-6 col-md-3">
+                                <div class="form-group search_options col-sm-6 col-md-2">
+
+                                    <label for="Location">Municipality</label>
+                                    <!-- <select class="form-control" id="location" placeholder="Select City" ng-model="location" ng-options="x for x in districts"> -->
+                         <!-- <label for="Location">Muncipality</label> -->
+                                    <select class="form-control" id="location" placeholder="Select Municipality" ng-model="municipality_id" ng-change="change()" ng-options="x.display_name for x in municipality">
+
+                                    <option value="">Search in Municipality</option>
+                                    </select>
+                                </div>
+                                <div class="form-group search_options col-sm-6 col-md-2">
 
                                     <label for="Location">Area</label>
                                     <!-- <select class="form-control" id="location" placeholder="Select City" ng-model="location" ng-options="x for x in districts"> -->
@@ -28,7 +38,7 @@
                                     <select class="form-control" id="inputEmail4" placeholder="Email" ng-model="no_of_bed_rooms" ng-options="x for x in num_bedrooms">
                                     <option value="">No. of bedrooms</option>
                                     </select> </div>
-                                <div class="form-group search_options col-sm-6 col-md-3">
+                                <div class="form-group search_options col-sm-6 col-md-2">
                                     <label for="inputPassword4">Furniture</label>
                                     <select class="form-control" id="inputEmail4" placeholder="Email" ng-model="furniture" ng-options = "x for x in furniture_type">
                                       <option value="">Select Furniture Type</option>
