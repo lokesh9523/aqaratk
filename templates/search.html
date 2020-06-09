@@ -6,20 +6,20 @@
     <div class="carousel slide" data-ride="carousel">
         <div class="carousel-inner text-center">
             <div class="carousel-item active">
-                <div class="d-flex align-items-center justify-content-center" style="background: url(assets/img/home/background.jpg); height: 75vh;">
+                <div class="d-flex align-items-center justify-content-center" style="background: url(assets/img/home/banner-img.jpg); height: 75vh;">
                     <div class="container">
                         <div class="col-md-12">
-                            <h1 class="text-uppercase"><span class="text-white">FIND YOUR IDEAL</span><span class="text-gold"> APARTMENT</span></h1>
+                            <h1 class="text-uppercase"><span class="text-white">{{'IDEAL' | translate}}</span></h1>
                         </div>
                         <div class="col-md-12">
-                            <h1 class="text-uppercase"><span class="text-gold">FOR RENT</span><span class="text-white"> WITH US</span></h1>
+                            <h1 class="text-uppercase"><span class="text-gold">{{'property' | translate}}</span><span class="text-white"> {{'WITH_US' | translate}}</span></h1>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container" >
+    <!-- <div class="container" >
         <div class="row" style="margin-top: -50px;">
             <div class="col-md-12">
                 <div class="jumbotron bg-maroon py-4">
@@ -30,8 +30,7 @@
                                     <div class="form-group search_options col-sm-6 col-md-2">
     
                                         <label for="Location">Municipality</label>
-                                        <!-- <select class="form-control" id="location" placeholder="Select City" ng-model="location" ng-options="x for x in districts"> -->
-                             <!-- <label for="Location">Muncipality</label> -->
+                                        
                                         <select class="form-control" id="location" placeholder="Select Municipality" ng-model="municipality_id" ng-change="change()" ng-options="x.display_name for x in municipality">
     
                                         <option value="">Search in Municipality</option>
@@ -40,8 +39,7 @@
                                     <div class="form-group search_options col-sm-6 col-md-2">
     
                                         <label for="Location">Area</label>
-                                        <!-- <select class="form-control" id="location" placeholder="Select City" ng-model="location" ng-options="x for x in districts"> -->
-                             <!-- <label for="Location">Muncipality</label> -->
+                                       
                                         <select class="form-control" id="location" placeholder="Select City" ng-model="location_id" ng-options="x.display_name for x in location">
     
                                         <option value="">Search in Location</option>
@@ -77,9 +75,9 @@
         </div>
     
     
-    </div>
-    <!-- <search-bar></search-bar> -->
-    <div class="container-fluid">
+    </div> -->
+    <search-bar></search-bar>
+    <div class="container-fluid mt-4">
         <div class="row">
             <div class="col-md-12">
                 <div class="container-fluid">
