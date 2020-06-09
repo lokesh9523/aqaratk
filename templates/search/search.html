@@ -8,12 +8,12 @@
                             <div class="form-row text-white">
                                 <div class="form-group search_options col-sm-6 col-md-2">
 
-                                    <label for="Location">Municipality</label>
+                                    <label for="Location">{{'municipality' | translate}}</label>
                                     <!-- <select class="form-control" id="location" placeholder="Select City" ng-model="location" ng-options="x for x in districts"> -->
                          <!-- <label for="Location">Muncipality</label> -->
                                     <select class="form-control" id="location" placeholder="Select Municipality" ng-model="municipality_id" ng-change="change()" ng-options="x.display_name for x in municipality">
 
-                                    <option value="">Search in Municipality</option>
+                                    <option value="">{{'select_municipality' | translate}}</option>
                                     </select>
                                 </div>
                                 <div class="form-group search_options col-sm-6 col-md-2">
