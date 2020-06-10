@@ -11,7 +11,7 @@
                                     <label for="Location">{{'municipality' | translate}}</label>
                                     <!-- <select class="form-control" id="location" placeholder="Select City" ng-model="location" ng-options="x for x in districts"> -->
                          <!-- <label for="Location">Muncipality</label> -->
-                                    <select class="form-control" id="location" placeholder="Select Municipality" ng-model="municipality_id" ng-change="change()" ng-options="x.display_name for x in municipality">
+                                    <select class="form-control" id="location" placeholder="Select Municipality" ng-model="municipality_id" ng-change="change()" ng-options="x.display_name | translate for x in municipality">
 
                                     <option value="">{{'select_municipality' | translate}}</option>
                                     </select>
@@ -21,7 +21,7 @@
                                     <label for="Location">{{'area' | translate}}</label>
                                     <!-- <select class="form-control" id="location" placeholder="Select City" ng-model="location" ng-options="x for x in districts"> -->
                          <!-- <label for="Location">Muncipality</label> -->
-                                    <select class="form-control" id="location" placeholder="Select City" ng-model="location_id" ng-options="x.display_name for x in location">
+                                    <select class="form-control" id="location" placeholder="Select City" ng-model="location_id" ng-options="x.display_name | translate for x in location">
 
                                     <option value="">{{'select_area' | translate}}</option>
                                     </select>
@@ -30,7 +30,7 @@
 
                          
                                     <label for="inputPassword4">{{'property_type' | translate}}</label>
-                                    <select class="form-control" id="propertyType" placeholder="Property Type" ng-model="property_id" ng-options="x.display_name for x in property">
+                                    <select class="form-control" id="propertyType" placeholder="Property Type" ng-model="property_id" ng-options="x.display_name | translate for x in property">
                                     <option value="">{{'type_of_property' | translate}}</option>
                                     </select> </div>
                                 <div class="form-group search_options col-sm-6 col-md-2">
