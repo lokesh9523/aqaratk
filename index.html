@@ -43,6 +43,16 @@
     <script src="assets/js/app.js"></script>
     <script src="assets/js/angular-routes.js"></script>
     <script src="assets/js/script.js"></script>
+    <script type="text/javascript">
+        function openIframe(src){
+            var iframe  = document.getElementById("forPostyouradd");
+            iframe.setAttribute('src', src);
+            iframe.style.display = 'block';
+
+            iframe.contentDocument.style.width = '100%'
+            $('#imageModal').modal('handleUpdate')
+        }
+    </script>
 </body>
 
 </html>
