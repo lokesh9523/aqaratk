@@ -6,7 +6,7 @@ app.config(function ($routeProvider, $locationProvider) {
     })
     .when("/search", {
       templateUrl : "templates/search.html",
-      controller: 'journalGlobalController'
+      controller: 'searchController'
     })
     .when("/post", {
         templateUrl : "templates/post/post_property.html",
@@ -18,7 +18,7 @@ app.config(function ($routeProvider, $locationProvider) {
     })
     .when("/contact", {
         templateUrl : "templates/contact.html",
-        controller: 'journalGlobalController'
+        controller: 'contactController'
     })
     .when("/property", {
         templateUrl : "templates/properties/properties.html",
@@ -26,7 +26,7 @@ app.config(function ($routeProvider, $locationProvider) {
     })
     .when("/forgot_password", {
         templateUrl : "templates/forgot_password.html",
-        controller: 'journalGlobalController'
+        controller: 'forgotController'
     })
       $locationProvider.html5Mode(true)
     });

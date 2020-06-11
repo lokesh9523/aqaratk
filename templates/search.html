@@ -89,7 +89,7 @@
             <div class="col-md-12">
                 <div class="container-fluid">
                     <div class="row mb-5" id="items">
-                        <div class="col-xs-12 col-sm-6 col-md-3 mb-2" ng-repeat="item in search">
+                        <div class="col-xs-12 col-sm-6 col-md-3 mb-2" ng-repeat="item in totalproperty |limitTo:6">
                             <div class="card animated zoomIn delay-1s">
                                 <div class="card-heading text-center">
                                     <a data-toggle="modal" data-target="#imageModal" class="hidden-xs">
@@ -97,12 +97,15 @@
                                 </a>
                                 </div>
                                 <div class="card-body">
-                                    <h6 class="text-uppercase">THREE BEDROOM APARTMENT EZDAN</h6>
+                                    <h6 class="text-uppercase">{{item.property_name | translate}}</h6>
                                     <div class="row">
                                         <div class="col-xs-12 col-sm-8 col-md-8">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <p class="mb-0">Fereej Bin Mahmood, Qatar</p>
+                                                    <p class="mb-0">{{item.municipality_name | translate}}</p>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <p class="mb-0">{{item.location_name | translate}}, Qatar</p>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <p class="mb-0">Call: (+974) 1234 5678</p>

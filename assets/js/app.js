@@ -237,11 +237,11 @@ var translationsEN = {
     "Tower": "Tower",
     "Staff Accommodation": "Staff Accommodation",
     "Other": "Other...",
-    "Residential":"Residential",
-    "Commercial":"Commercial",
-    "Sell":"Sell",
-    "Buy":"Buy",
-    "Rent":"Rent"
+    "Residential": "Residential",
+    "Commercial": "Commercial",
+    "Sell": "Sell",
+    "Buy": "Buy",
+    "Rent": "Rent"
 };
 
 var translationsAR = {
@@ -487,11 +487,11 @@ var translationsAR = {
     "Tower": "برج",
     "Staff Accommodation": "سكن عمال",
     "Other": "أخرى...",
-    "Residential":"سكني",
-    "Commercial":"تجاري",
-    "Sell":"بيع",
-    "Buy":"شراء",
-    "Rent":"إيجار"
+    "Residential": "سكني",
+    "Commercial": "تجاري",
+    "Sell": "بيع",
+    "Buy": "شراء",
+    "Rent": "إيجار"
 };
 
 var app = angular.module("myApp", ['ngRoute', 'pascalprecht.translate',
@@ -569,7 +569,6 @@ app.controller("journalGlobalController", ["$translate", "$scope", "loginService
 
     // $cookies.put("language", 'en');
     if ($cookies.get('language')) {
-        console.log("iam here222")
         $translate.use($cookies.get('language'));
         window.onload = function () {
             console.log("iam here1111");
@@ -629,19 +628,7 @@ app.controller("journalGlobalController", ["$translate", "$scope", "loginService
 
 
     $scope.search = [1, 2, 3, 4, 5, 6, 7, 8];
-
-
-
-    $scope.num_bedrooms = [1, 2, 3, 'Villa'];
-
-    $scope.furniture_type = ['Furnished', 'Unfurnished']
-
-
-    //     $scope.searchItem = function () {
-
-    //         window.location.href = "/search";
-    //     }
-
+    $scope.num_bedrooms = [1, 2, 3, 4, 5, 6];
     $scope.languages = [{ 'language': 'En', value: 'English' }, { 'language': 'Ar', value: 'Arabic' }]
 
 
@@ -656,7 +643,32 @@ app.controller("journalGlobalController", ["$translate", "$scope", "loginService
         });
 
     }
+    const urlParams = new URLSearchParams(window.location.search);
+    console.log(urlParams.get('property_id'), urlParams.get('location_id'), urlParams.get('no_of_bed_rooms'), urlParams.get('furniture'))
+
+    if (urlParams.get('municipality_id') || urlParams.get('property_id') || urlParams.get('location_id') || urlParams.get('no_of_bed_rooms') || urlParams.get('furniture')) {
+
+        var postParams = {
+            'municipality_id': urlParams.get('municipality_id') ? urlParams.get('municipality_id') : '',
+            'location_id': urlParams.get('location_id') ? urlParams.get('location_id') : '',
+            'property_id': urlParams.get('property_id') ? urlParams.get('property_id') : '',
+            'no_of_bed_rooms': urlParams.get('no_of_bed_rooms') ? urlParams.get('no_of_bed_rooms') : '',
+            'furniture': urlParams.get('furniture') ? urlParams.get('furniture') : ''
+        };
+        // console.log($scope.property_id,$scope.location_id,postParams)
+        var searchapi = 'http://15.206.186.93:3001/property/search';
+        return propertyService.search(searchapi, postParams).then(function (data) {
+            $scope.totalproperty = data;
+
+        }).catch(function (error) {
+            $scope.errorMessage = error.data;
+        });
+
+
+    } else {
+    }
     $scope.searchItem = function () {
+        console.log("iam here");
         if ($scope.municipality_id || $scope.location_id || $scope.property_id || $scope.no_of_bed_rooms || $scope.furniture) {
             console.log("iam here")
             var postParams = {
@@ -675,8 +687,6 @@ app.controller("journalGlobalController", ["$translate", "$scope", "loginService
             alert("Select Atleast One Field")
         }
     }
-    $scope.num_bedrooms = [1, 2, 3, 4, 5, 6];
-
     $scope.furniture_type = ['Semi Furnished', 'Fully Furnished']
 
     $scope.forgetpassword = function () {
@@ -822,19 +832,7 @@ app.controller("propertyController", ["$scope", "propertyService", "$cookies", "
 }])
 app.controller("searchController", ['$scope', 'propertyService', '$cookies', '$translate', function ($scope, propertyService, $cookies, $translate) {
     $translate.use($cookies.get('language'));
-    console.log($cookies.get('language'))
-    if ($cookies.get('language') === 'ar') {
-        console.log('Language is arabic');
-        document.getElementById('login_text').style.float = 'left';
-        document.getElementById('mobile_num').style.direction = 'ltr';
-        document.getElementById('logo').setAttribute('src', 'assets/img/main/logo_ar.png');
-        document.getElementById('logo_white').setAttribute('src', 'assets/img/main/logo_white_ar.png');
-
-    }
-    else {
-        document.getElementById('logo').setAttribute('src', 'assets/img/main/logo.PNG');
-        document.getElementById('logo_white').setAttribute('src', 'assets/img/main/logo-white.png');
-    }
+  
     var api = 'http://15.206.186.93:3001/property/types'
     propertyService.getPropertyTypes(api).then(function (data) {
         $scope.property = data
@@ -863,38 +861,48 @@ app.controller("searchController", ['$scope', 'propertyService', '$cookies', '$t
     }
     // $scope.num_bedrooms = [1, 2, 3, 4, 5, 6];
 
-    // $scope.furniture_type = ['Semi Furnished', 'Fully Furnished']
+     $scope.furniture_type = ['Semi Furnished', 'Fully Furnished']
     const urlParams = new URLSearchParams(window.location.search);
     let property_id = urlParams.get('property_id');
     let location_id = urlParams.get('location_id');
     let no_of_bed_rooms = urlParams.get('no_of_bed_rooms');
     let furniture = urlParams.get('furniture');
     if (urlParams.get('property_id') || urlParams.get('location_id') || urlParams.get('no_of_bed_rooms') || urlParams.get('furniture')) {
+        var postParams = {
+            'municipality_id': urlParams.get('municipality_id') ? urlParams.get('municipality_id') : '',
+            'location_id': urlParams.get('location_id') ? urlParams.get('location_id') : '',
+            'property_id': urlParams.get('property_id') ? urlParams.get('property_id') : '',
+            'no_of_bed_rooms': urlParams.get('no_of_bed_rooms') ? urlParams.get('no_of_bed_rooms') : '',
+            'furniture': urlParams.get('furniture') ? urlParams.get('furniture') : ''
+        };
+        // console.log($scope.property_id,$scope.location_id,postParams)
+        var searchapi = 'http://15.206.186.93:3001/property/search';
+        return propertyService.search(searchapi, postParams).then(function (data) {
+            $scope.totalproperty = data;
+            if(!$scope.totalproperty.length){
 
+            }
+
+        }).catch(function (error) {
+            $scope.errorMessage = error.data;
+        });
 
     } else {
 
     }
     $scope.searchItem = function () {
-        console.log($scope.location_id, "==", $scope.property_id, "---", $scope.no_of_bed_rooms, "===", $scope.furniture)
-        if ($scope.location_id || $scope.property_id || $scope.no_of_bed_rooms || $scope.furniture) {
+        if ($scope.municipality_id || $scope.location_id || $scope.property_id || $scope.no_of_bed_rooms || $scope.furniture) {
             console.log("iam here")
             var postParams = {
+                'municipality_id':$scope.municipality_id ? $scope.municipality_id.id : '',
                 'location_id': $scope.location_id ? $scope.location_id.id : '',
                 'property_id': $scope.property_id ? $scope.property_id.id : '',
                 'no_of_bed_rooms': $scope.no_of_bed_rooms ? $scope.no_of_bed_rooms : '',
                 'furniture': $scope.furniture ? $scope.furniture : ''
             };
-            // console.log($scope.property_id,$scope.location_id,postParams)
             var searchapi = 'http://15.206.186.93:3001/property/search';
             return propertyService.search(searchapi, postParams).then(function (data) {
-                $scope.totalproperty = data;
-                $scope.totalproperty.forEach(element => {
-                    if (element.images) {
-                        element.images = angular.fromJson(element.images);
-
-                    }
-                })
+                 $scope.totalproperty = data;
             }).catch(function (error) {
                 $scope.errorMessage = error.data;
             });
@@ -903,6 +911,51 @@ app.controller("searchController", ['$scope', 'propertyService', '$cookies', '$t
             alert("Select Atleast One Field")
         }
     }
+}])
+app.controller("contactController", ['$scope', 'commonService', '$cookies', '$translate', function ($scope, commonService, $cookies, $translate) {
+    $translate.use($cookies.get('language'));
+    $scope.contactus = function () {
+        console.log("iam here1111111111111111111")
+        if ($scope.first_name && $scope.last_name && $scope.email && $scope.subject) {
+            var data = {
+                "first_name": $scope.first_name,
+                "last_name": $scope.last_name,
+                "email": $scope.email,
+                "subject": $scope.subject
+            };
+
+            var api = 'http://15.206.186.93:3001/contact'
+            return commonService.contactus(api, data).then(function (data) {
+                alert("We Will Contact You Shortly")
+            })
+        } else {
+            $scope.errorMessage = "Please Enter all the Fields";
+        }
+    }
+
+
+}])
+app.controller("forgotController", ['$scope', 'commonService', '$cookies', '$translate', function ($scope, commonService, $cookies, $translate) {
+    $translate.use($cookies.get('language'));
+    $scope.forgotpassword = function () {
+        if ($scope.email) {
+            var data = {
+                "email": $scope.email
+            };
+
+            var api = 'http://15.206.186.93:3001/forgotpassword'
+            return commonService.contactus(api, data).then(function (data) {
+                alert("Password Has Sent to Your Mail")
+            }, error => {
+                // console.log(error)
+                alert(error.data)
+            })
+        } else {
+            $scope.errorMessage = "Please Enter all the Fields";
+        }
+    }
+
+
 }])
 app.service('loginService', function ($http, $q) {
     return {
@@ -1027,6 +1080,34 @@ app.service('propertyService', function ($http, $q) {
             return def.promise;
         }
     }
-})
+});
+app.service('commonService', function ($http, $q) {
+    return {
+        contactus: function (api, postParams) {
+            var def = $q.defer();
+            $http.post(api, postParams, {
+            })
+                .then(function (data) {
+                    def.resolve(data.data.data);
+                },
+                    function (error) {
+                        def.reject(error.data);
+                    });
+            return def.promise;
+        }, forgot: function (api, postParams) {
+            var def = $q.defer();
+            $http.post(api, postParams, {
+            })
+                .then(function (data) {
+                    def.resolve(data.data.data);
+                },
+                    function (error) {
+                        def.reject(error.data);
+                    });
+            return def.promise;
+        }
+
+    };
+});
 
 
