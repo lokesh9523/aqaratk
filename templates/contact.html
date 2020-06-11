@@ -1,23 +1,24 @@
 <div class="wrapper bg-dark text-white m-0 py-4">
 <div class="container my-4">
-<form action="/action_page.php">
+<form >
 <div class="form-group">
     <label for="fname">{{'first_name' | translate}}</label>
-    <input type="text" class="form-control" id="fname" name="firstname">
+    <input type="text" class="form-control" id="fname" name="first_name" ng-model = "first_name" required>
 </div>
 <div class="form-group">
     <label for="lname">{{'last_name' | translate}}</label>
-    <input type="text" class="form-control" id="lname" name="lastname">
+    <input type="text" class="form-control" id="lname" name="last_name" ng-model = "last_name" required>
 </div>
 <div class="form-group">
     <label for="mail">{{'email' | translate}}</label>
-    <input type="email" class="form-control" id="email" name="email">
+    <input type="email" class="form-control" id="email" name="email" ng-model = "email" required>
 </div>
     <div class="form-group">
     <label for="subject">{{'subject' | translate}}</label>
-    <textarea id="subject" class="form-control" name="subject" rows='8'></textarea>
+    <textarea id="subject" class="form-control" name="subject" rows='8'  ng-model = "subject" required></textarea>
 </div>
-    <input type="submit" class="btn btn-light text-dark" value="{{'Submit' | translate}}">
+    <input type="submit" class="btn btn-light text-dark" ng-click = "contactus()"value="{{'Submit' | translate}}">
   </form>
+  <div ng-if="errorMessage" style="color:red">{{ errorMessage }}</div>
 </div>
 </div>
