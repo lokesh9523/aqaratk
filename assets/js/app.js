@@ -681,7 +681,7 @@ app.controller("journalGlobalController", ["$translate", "$scope", "loginService
 
             var api = 'http://15.206.186.93:3001/property/search';
 
-            window.location.href = '/search?municipality_id=' + postParams.municipality_id + '&location_id=' + postParams.location_id + '&property_id=' + postParams.property_id + '&no_of_bed_rooms' + postParams.no_of_bed_rooms + '&furniture=' + postParams.furniture;
+            window.location.href = '/search?municipality_id=' + postParams.municipality_id + '&location_id=' + postParams.location_id + '&property_id=' + postParams.property_id + '&no_of_bed_rooms=' + postParams.no_of_bed_rooms + '&furniture=' + postParams.furniture;
 
         } else {
             alert("Select Atleast One Field")
