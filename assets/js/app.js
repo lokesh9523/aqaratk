@@ -241,7 +241,9 @@ var translationsEN = {
     "Commercial": "Commercial",
     "Sell": "Sell",
     "Buy": "Buy",
-    "Rent": "Rent"
+    "Rent": "Rent",
+    "Fully Furnished":"Fully Furnished",
+    "Semi Furnished":"Semi Furnished"
 };
 
 var translationsAR = {
@@ -484,6 +486,7 @@ var translationsAR = {
     "Residential Building": "عمارة سكنية",
     "Commercial Building": "عمارة تجارية",
     "Administrative Building": "عمارة إدارية",
+    "ADMINISTRATIVE BUILDING": "عمارة إدارية",
     "Tower": "برج",
     "Staff Accommodation": "سكن عمال",
     "Other": "أخرى...",
@@ -491,7 +494,9 @@ var translationsAR = {
     "Commercial": "تجاري",
     "Sell": "بيع",
     "Buy": "شراء",
-    "Rent": "إيجار"
+    "Rent": "إيجار",
+    "Fully Furnished":'مفروشة بالكامل',
+    "Semi Furnished":"مفروشة بالكامل"
 };
 
 var app = angular.module("myApp", ['ngRoute', 'pascalprecht.translate',
