@@ -28,5 +28,9 @@ app.config(function ($routeProvider, $locationProvider) {
         templateUrl : "templates/forgot_password.html",
         controller: 'forgotController'
     })
+    .when("/required", {
+      templateUrl : "templates/post/post_property.html",
+      controller: 'propertyController'
+  })
       $locationProvider.html5Mode(true)
     });

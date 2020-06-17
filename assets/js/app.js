@@ -8,7 +8,7 @@ var translationsEN = {
     APARTMENT: 'APARTMENT',
     RENT: 'FOR RENT',
     WITH_US: 'WITH US',
-    we_are_realestate: 'Pioneers in Classified Properties Field.',
+    we_are_realestate: 'Pioneers in Classified Properties.',
     post: 'Post',
     property: 'Property',
     about_aqa: 'About Aqaratk',
@@ -39,7 +39,7 @@ var translationsEN = {
     first_name: 'First Name',
     last_name: 'Last Name',
     email: 'Email',
-    subject: 'Subject',
+    subject: 'Subject / Remark about out Site',
     Submit: 'Submit',
     municipality: 'Municipality',
     property_type: 'Property Type',
@@ -243,7 +243,9 @@ var translationsEN = {
     "Buy": "Buy",
     "Rent": "Rent",
     "Fully Furnished":"Fully Furnished",
-    "Semi Furnished":"Semi Furnished"
+    "Semi Furnished":"Semi Furnished",
+    required: 'Required',
+    sell_rent : 'Sell or Rent'
 };
 
 var translationsAR = {
@@ -256,7 +258,7 @@ var translationsAR = {
     APARTMENT: 'شقة',
     RENT: 'للإيجار',
     WITH_US: 'معنا',
-    we_are_realestate: 'رائدون في مجال العقارات المبوبة',
+    we_are_realestate: 'رائدون في مجال العقارات',
     property: 'عن عقارك',
     about_aqa: 'عن موقع عقاراتك',
     know_more: 'اقرأ المزيد',
@@ -289,7 +291,7 @@ var translationsAR = {
     first_name: 'الإسم',
     last_name: 'اللقب',
     email: 'الإيميل',
-    subject: 'الموضوع',
+    subject: 'ملاحظات عن الموقع',
     Submit: 'إرسال',
     municipality: 'البلدية',
     property_type: 'نوع العقار',
@@ -496,7 +498,9 @@ var translationsAR = {
     "Buy": "شراء",
     "Rent": "إيجار",
     "Fully Furnished":'مفروشة بالكامل',
-    "Semi Furnished":"مفروشة بالكامل"
+    "Semi Furnished":"مفروشة بالكامل",
+    required: 'مطلوب',
+    sell_rent : 'للبيع أو للإيجار'
 };
 
 var app = angular.module("myApp", ['ngRoute', 'pascalprecht.translate',
