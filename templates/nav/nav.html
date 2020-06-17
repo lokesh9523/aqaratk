@@ -58,15 +58,17 @@
                         {{'Properties' | translate}}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">{{'Residential' | translate}}</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">{{'Commercial' | translate}}</a>
-                        <div class="dropdown-divider"></div>
+                        <!-- <a class="dropdown-item" href="#">{{'Residential' | translate}}</a> -->
+                        <!-- <div class="dropdown-divider"></div> -->
+                        <!-- <a class="dropdown-item" href="#">{{'Commercial' | translate}}</a> -->
+                        <!-- <div class="dropdown-divider"></div> -->
                         <a class="dropdown-item" href="#">{{'Sell' | translate}}</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">{{'Buy' | translate}}</a>
-                        <div class="dropdown-divider"></div>
+                        <!-- <a class="dropdown-item" href="#">{{'Buy' | translate}}</a> -->
+                        <!-- <div class="dropdown-divider"></div> -->
                         <a class="dropdown-item" href="#">{{'Rent' | translate}}</a>
+                        <div class = "dropdown-divider"></div>
+                        <a class = "dropdown-item" href = "#">{{'Required' | translate}}</a>
                     </div>
                 </li>
                 <li class="nav-item text-uppercase">
@@ -75,11 +77,16 @@
                 <li class="nav-item">
                     <a class="nav-link btn btn-maroon px-4 text-white" href="/post">{{'post' | translate}} {{'property' | translate}}</a>
                 </li>
+<<<<<<< HEAD
                 <li class="nav-item">
                     <a class="nav-link btn btn-gold px-4 text-white" href="#search">{{'search' | translate}}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link btn btn-maroon px-4 text-white" href="/required">{{'required' | translate}}</a>
+=======
+                <li class = "nav-item">
+                    <a class = "nav-link btn btn-maroon px-4 text-white" href = "/search">{{'search' | translate}}</a>
+>>>>>>> 3098f82e1f7f8ae2685d28e78e1aa080b1f84358
                 </li>
             </ul>
         </div>
@@ -102,7 +109,7 @@
             <div class="modal-body">
                 <form name="loginForm">
                     <div class="form-group">
-                        <label for="username">{{'user_email' | translate}}*</label>
+                        <label for="username">{{'Username' | translate}}*</label>
                         <input type="text" class="form-control" id="login_username" name="username" ng-model="user_name" required>
                     </div>
                     <div class="form-group">
@@ -139,15 +146,26 @@
                         <input type="text" class="form-control" id="username" name="username" ng-model="user_name" required>
                     </div>
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="Email">{{'email' | translate}}*</label>
                         <input type="email" class="form-control" id="email" name="email" ng-model="email" required>
-                    </div>
+                    </div> -->
 
                     <div class="form-group">
                         <label for="Phone">{{'phone_num' | translate}}*</label>
                         <input type="number" class="form-control" id="phone_number" name="mobile" ng-model="mobile_number" required>
                     </div>
+                    <div class="form-group">
+                        <label for="inputPassword4">{{'Adjective' | translate}}</label>
+                        <select class="form-control" id="inputEmail4" placeholder="Email" ng-model="adjecive" required>
+                          <option value="">{{'select_furniture' | translate}}</option>
+                          <option value = "Owner">{{'Owner' | translate}}</option>
+                          <option value = "Buyer/Renter">{{'Buyer_Renter' | translate}}</option>
+                          <option value = "Investor">{{'Investor' | translate}}</option>
+                          <option value = "Owners_Agent_Representative">{{'Owner’s Agent/Representative' | translate}}</option>
+                          <option value = "Mediator">{{'Mediator' | translate}}</option>
+                          <option value = "Real_estate_company">{{'Real estate company' | translate}}</option>
+                        </select></div>
                     <div class="form-group">
                         <label for="name">{{'Name' | translate}}*</label>
                         <input type="name" class="form-control" id="name" name="name" ng-model="name" required>
