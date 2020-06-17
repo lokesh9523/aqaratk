@@ -8,6 +8,7 @@ var translationsEN = {
     APARTMENT: 'APARTMENT',
     RENT: 'FOR RENT',
     WITH_US: 'WITH US',
+    home: 'FIND YOUR IDEAL PROPERTY WITH US!',
     we_are_realestate: 'Pioneers in Classified Properties Field.',
     post: 'Post',
     property: 'Property',
@@ -59,6 +60,13 @@ var translationsEN = {
     Name: 'Name',
     Password: 'Password',
     forgot_pwd: 'Forgot password',
+    Adjective: 'Adjective',
+    Owner: 'Owner',
+    Buyer_Renter: 'Buyer/Renter',
+    Investor: 'Investor',
+    Owners_Agent_Representative: 'Owner’s Agent/Representative',
+    Mediator: 'Mediator',
+    Real_estate_company: 'Real estate company',
     Login: 'Login',
     num: '+974 1234 5678',
     search: 'Search',
@@ -225,7 +233,7 @@ var translationsEN = {
     "Apartment": "Apartment",
     "Villa": "Villa",
     "Residential Compound": "Residential Compound",
-    "Commercial Compound": "Commercial Compound",
+    "Commercial Compound": "Commercial Compound / Markets",
     "Hotel Appartments": "Hotel Appartments",
     "Office Space": "Office Space",
     "Shop": "Shop",
@@ -242,8 +250,23 @@ var translationsEN = {
     "Sell": "Sell",
     "Buy": "Buy",
     "Rent": "Rent",
-    "Fully Furnished":"Fully Furnished",
-    "Semi Furnished":"Semi Furnished"
+    "Fully Furnished": "Fully Furnished",
+    "Semi Furnished": "Semi Furnished",
+    "Residential": "Residential",
+    "Commercial": "Commercial",
+    "Service": "Service",
+    "Administrative": "Administrative",
+    "Farm": "Farm",
+    "Hotel": "Hotel",
+    "Traditional Villa": "Traditional Villa",
+    "Lounge": "Lounge",
+    "Chalet": "Chalet",
+    "Manor": "Manor",
+    "Mainland House": "Mainland House",
+    "Required":"Required",
+    "sell_or_rent":"Sell or Rent",
+    "about_the_property":"About the Property",
+    "please_select":"Please Select"
 };
 
 var translationsAR = {
@@ -269,6 +292,7 @@ var translationsAR = {
     follow_us: 'تابعنا',
     our_loc: 'موقعنا',
     Copyright: 'جميع الحقوق محفوظة',
+    home: 'ابحث واحصل على أفضل العقارات المبوبة معنا!',
     // all_rights : 'كل الحقوق محفوظة',
     Mobile: 'الجوال',
     about_content: 'عقاراتك هي واحدة من الشركات الرائدة في مجال العقارات في السوق القطرية…',
@@ -309,6 +333,13 @@ var translationsAR = {
     Name: 'الإسم',
     Password: 'كلمة السر',
     forgot_pwd: 'نسيت كلمة السر',
+    Adjective: 'الصفة',
+    Owner: 'مالك',
+    Buyer_Renter: 'مشتري/مستأجر',
+    Investor: 'مستثمر',
+    Owners_Agent_Representative: 'مندوب أو وكيل المالك',
+    Mediator: 'وسيك',
+    Real_estate_company: 'مكتب عقارات',
     Login: 'دخول',
     AR: 'عربي',
     num: '+974 1234 5678',
@@ -477,7 +508,7 @@ var translationsAR = {
     "Apartment": "شقة",
     "Villa": "فيلا",
     "Residential Compound": "مجمع سكني",
-    "Commercial Compound": "مجمع تجارس",
+    "Commercial Compound": "مجمع تجاري / أسواق",
     "Hotel Appartments": "شقق فندقية",
     "Office Space": "مكاتب",
     "Shop": "محل",
@@ -495,8 +526,23 @@ var translationsAR = {
     "Sell": "بيع",
     "Buy": "شراء",
     "Rent": "إيجار",
-    "Fully Furnished":'مفروشة بالكامل',
-    "Semi Furnished":"مفروشة بالكامل"
+    "Fully Furnished": 'مفروشة بالكامل',
+    "Semi Furnished": "مفروشة بالكامل",
+    "Residential": "سكني",
+    "Commercial": "تجاري",
+    "Service": "خدمي",
+    "Administrative": "إداري",
+    "Farm": "مزرعة",
+    "Hotel": "فندق",
+    "Traditional Villa": "فيلا شعبية",
+    "Lounge": " إستراحة",
+    "Chalet": "شاليه",
+    "Manor": "عزبه",
+    "Mainland House": "بيت بر=",
+    "Required":"مطلوب ",
+    "sell_or_rent":"للبيع أو للإيجار",
+    "about_the_property":"عن العقار",
+    "please_select":"يرجى التحديد"
 };
 
 var app = angular.module("myApp", ['ngRoute', 'pascalprecht.translate',
@@ -700,8 +746,9 @@ app.controller("journalGlobalController", ["$translate", "$scope", "loginService
     }
 }]);
 
-app.controller("loginController", ['$scope', 'loginService', '$cookies', function ($scope, loginService, $cookies) {
+app.controller("loginController", ['$scope', 'loginService', '$cookies', "$translate", function ($scope, loginService, $cookies, $translate) {
     // $scope.errorMessage = false;
+    $translate.use($cookies.get('language'));
     $scope.submitLogin = function () {
         $scope.error = {
             message: null
@@ -725,7 +772,8 @@ app.controller("loginController", ['$scope', 'loginService', '$cookies', functio
             });
     };
 }]);
-app.controller("registerController", ["$scope", "registerService", function ($scope, registerService) {
+app.controller("registerController", ["$scope", "registerService", "$translate", '$cookies', function ($scope, registerService, $translate, $cookies) {
+    $translate.use($cookies.get('language'));
     $scope.submitRegister = function () {
         $scope.error = {
             message: null
@@ -733,9 +781,9 @@ app.controller("registerController", ["$scope", "registerService", function ($sc
         var postParams = {
             'user_name': $scope.user_name,
             'password': $scope.password,
-            'email': $scope.email,
             'mobile_number': $scope.mobile_number,
-            'name': $scope.name
+            'name': $scope.name,
+            'adjective':$scope.adjective
         };
 
         var api = 'http://15.206.186.93:3001/register';
@@ -803,7 +851,7 @@ app.controller("propertyController", ["$scope", "propertyService", "$cookies", "
 
 
             var file = $scope.myFile;
-            if ($scope.municipality && $scope.location && $scope.property_id && $scope.no_of_bed_rooms && $scope.furniture && file && $scope.price) {
+            if ($scope.type && $scope.municipality && $scope.location && $scope.property_id && $scope.no_of_bed_rooms && $scope.furniture  && $scope.price) {
                 var postParams = {
                     'login_id': $scope.login_id,
                     'municipality_id': $scope.municipality_id.id,
@@ -811,7 +859,9 @@ app.controller("propertyController", ["$scope", "propertyService", "$cookies", "
                     'property_id': $scope.property_id.id,
                     'no_of_bed_rooms': $scope.no_of_bed_rooms,
                     'furniture': $scope.furniture,
-                    'price': $scope.price
+                    'price': $scope.price,
+                    'type':$scope.type,
+                    'description':$scope.description
                 };
                 var api = 'http://15.206.186.93:3001/property/' + $scope.login_id;
                 propertyService.postProperty(api, postParams)
@@ -837,7 +887,7 @@ app.controller("propertyController", ["$scope", "propertyService", "$cookies", "
 }])
 app.controller("searchController", ['$scope', 'propertyService', '$cookies', '$translate', function ($scope, propertyService, $cookies, $translate) {
     $translate.use($cookies.get('language'));
-  
+
     var api = 'http://15.206.186.93:3001/property/types'
     propertyService.getPropertyTypes(api).then(function (data) {
         $scope.property = data
@@ -866,7 +916,7 @@ app.controller("searchController", ['$scope', 'propertyService', '$cookies', '$t
     }
     // $scope.num_bedrooms = [1, 2, 3, 4, 5, 6];
 
-     $scope.furniture_type = ['Semi Furnished', 'Fully Furnished']
+    $scope.furniture_type = ['Semi Furnished', 'Fully Furnished']
     const urlParams = new URLSearchParams(window.location.search);
     let property_id = urlParams.get('property_id');
     let location_id = urlParams.get('location_id');
@@ -884,7 +934,7 @@ app.controller("searchController", ['$scope', 'propertyService', '$cookies', '$t
         var searchapi = 'http://15.206.186.93:3001/property/search';
         return propertyService.search(searchapi, postParams).then(function (data) {
             $scope.totalproperty = data;
-            if(!$scope.totalproperty.length){
+            if (!$scope.totalproperty.length) {
 
             }
 
@@ -899,7 +949,7 @@ app.controller("searchController", ['$scope', 'propertyService', '$cookies', '$t
         if ($scope.municipality_id || $scope.location_id || $scope.property_id || $scope.no_of_bed_rooms || $scope.furniture) {
             console.log("iam here")
             var postParams = {
-                'municipality_id':$scope.municipality_id ? $scope.municipality_id.id : '',
+                'municipality_id': $scope.municipality_id ? $scope.municipality_id.id : '',
                 'location_id': $scope.location_id ? $scope.location_id.id : '',
                 'property_id': $scope.property_id ? $scope.property_id.id : '',
                 'no_of_bed_rooms': $scope.no_of_bed_rooms ? $scope.no_of_bed_rooms : '',
@@ -907,7 +957,7 @@ app.controller("searchController", ['$scope', 'propertyService', '$cookies', '$t
             };
             var searchapi = 'http://15.206.186.93:3001/property/search';
             return propertyService.search(searchapi, postParams).then(function (data) {
-                 $scope.totalproperty = data;
+                $scope.totalproperty = data;
             }).catch(function (error) {
                 $scope.errorMessage = error.data;
             });

@@ -24,6 +24,14 @@
                         <form>
                             <div class="form-row row text-white">
                                 <div class="form-group search_options col-md-6 col-sm-6 col-xs-12">
+                                    <label for="Location">{{'sell_or_rent' | translate}}</label>
+                                     <select class="form-control" id="location" placeholder="Please Select" ng-model="type"  required>
+                                     <option value="">{{'please_select' | translate}}</option>
+                                     <option value = "Sell">{{'Sell' | translate}}</option>
+                                     <option value = "Rent">{{'Rent' | translate}}</option>
+                                     </select>
+                                 </div>
+                                <div class="form-group search_options col-md-6 col-sm-6 col-xs-12">
                                    <label for="Location">{{'municipality' | translate}}</label>
                                     <select class="form-control" id="location" placeholder="Select Municipality" ng-model="municipality_id" ng-change="change()" ng-options="x.display_name | translate for x in municipality" required>
                                     <option value="">{{'select_municipality' | translate}}</option>
@@ -60,7 +68,11 @@
                                 <div class="form-group col-sm-12 col-md-3">
                                         <label for="inputPassword4" style="visibility: hidden">Password</label>
                                         <input type = "file" file-model = "myFile" required/>
-                                    </div>    
+                                    </div> 
+                                    <div class="form-group search_options col-md-6 col-sm-6 col-xs-12">
+                                        <label for="username">{{'about_the_property' | translate}}</label>
+                                        <textarea id="subject" class="form-control" name="subject" rows='8'  ng-model = "description" required></textarea>
+                                    </div>   
                                 <!-- <div class="col-sm-0 col-md-6"></div> -->
                                 <div class="form-group col-sm-12 col-md-3 d-block ml-auto mr-0">
                                     <label for="inputPassword4" style="visibility: hidden">Password</label>
