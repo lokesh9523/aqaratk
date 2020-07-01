@@ -253,7 +253,24 @@ var translationsEN = {
     "Fully Furnished":"Fully Furnished",
     "Semi Furnished":"Semi Furnished",
     required: 'Required',
-    sell_rent : 'Sell or Rent'
+    sell_rent : 'Sell or Rent',
+    "Fully Furnished": "Fully Furnished",
+    "Semi Furnished": "Semi Furnished",
+    "Residential": "Residential",
+    "Commercial": "Commercial",
+    "Service": "Service",
+    "Administrative": "Administrative",
+    "Farm": "Farm",
+    "Hotel": "Hotel",
+    "Traditional Villa": "Traditional Villa",
+    "Lounge": "Lounge",
+    "Chalet": "Chalet",
+    "Manor": "Manor",
+    "Mainland House": "Mainland House",
+    "Required":"Required",
+    "sell_or_rent":"Sell or Rent",
+    "about_the_property":"About the Property",
+    "please_select":"Please Select"
 };
 
 var translationsAR = {
@@ -515,10 +532,8 @@ var translationsAR = {
     "Rent": "إيجار",
     "Fully Furnished":'مفروشة بالكامل',
     "Semi Furnished":"مفروشة بالكامل",
-    required: 'مطلوب',
-    sell_rent : 'للبيع أو للإيجار',
-    "Fully Furnished": 'مفروشة بالكامل',
-    "Semi Furnished": "مفروشة بالكامل",
+    // 'required': 'مطلوب',
+    // 'sell_rent' : 'للبيع أو للإيجار',
     "Residential": "سكني",
     "Commercial": "تجاري",
     "Service": "خدمي",
