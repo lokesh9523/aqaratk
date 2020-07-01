@@ -8,12 +8,8 @@ var translationsEN = {
     APARTMENT: 'APARTMENT',
     RENT: 'FOR RENT',
     WITH_US: 'WITH US',
-<<<<<<< HEAD
-    we_are_realestate: 'Pioneers in Classified Properties.',
-=======
     home: 'FIND YOUR IDEAL PROPERTY WITH US!',
     we_are_realestate: 'Pioneers in Classified Properties Field.',
->>>>>>> 3098f82e1f7f8ae2685d28e78e1aa080b1f84358
     post: 'Post',
     property: 'Property',
     about_aqa: 'About Aqaratk',
@@ -254,12 +250,10 @@ var translationsEN = {
     "Sell": "Sell",
     "Buy": "Buy",
     "Rent": "Rent",
-<<<<<<< HEAD
     "Fully Furnished":"Fully Furnished",
     "Semi Furnished":"Semi Furnished",
     required: 'Required',
-    sell_rent : 'Sell or Rent'
-=======
+    sell_rent : 'Sell or Rent',
     "Fully Furnished": "Fully Furnished",
     "Semi Furnished": "Semi Furnished",
     "Residential": "Residential",
@@ -277,7 +271,6 @@ var translationsEN = {
     "sell_or_rent":"Sell or Rent",
     "about_the_property":"About the Property",
     "please_select":"Please Select"
->>>>>>> 3098f82e1f7f8ae2685d28e78e1aa080b1f84358
 };
 
 var translationsAR = {
@@ -537,14 +530,10 @@ var translationsAR = {
     "Sell": "بيع",
     "Buy": "شراء",
     "Rent": "إيجار",
-<<<<<<< HEAD
     "Fully Furnished":'مفروشة بالكامل',
     "Semi Furnished":"مفروشة بالكامل",
     required: 'مطلوب',
-    sell_rent : 'للبيع أو للإيجار'
-=======
-    "Fully Furnished": 'مفروشة بالكامل',
-    "Semi Furnished": "مفروشة بالكامل",
+    sell_rent : 'للبيع أو للإيجار',
     "Residential": "سكني",
     "Commercial": "تجاري",
     "Service": "خدمي",
@@ -560,7 +549,6 @@ var translationsAR = {
     "sell_or_rent":"للبيع أو للإيجار",
     "about_the_property":"عن العقار",
     "please_select":"يرجى التحديد"
->>>>>>> 3098f82e1f7f8ae2685d28e78e1aa080b1f84358
 };
 
 var app = angular.module("myApp", ['ngRoute', 'pascalprecht.translate',
