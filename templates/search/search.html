@@ -45,9 +45,21 @@
                                     <select class="form-control" id="inputEmail4" placeholder="Email" ng-model="furniture" ng-options = "x | translate for x in furniture_type">
                                       <option value="">{{'select_furniture' | translate}}</option>
                                     </select> </div>
-                                <div class="form-group col-sm-12 col-md-2">
+                                <div class="form-group col-sm-12 col-md-1">
                                     <label for="inputPassword1" style="visibility: hidden">Password</label>
-                                    <input type="button" class="form-control btn btn-gold text-white" id="inputPassword4" value="{{'search' | translate}}" ng-click="searchItem()">
+                                    <div class="row">
+                                        <div class="col-12 m-0 mx-auto">
+                                            <input type="button" class="form-control btn btn-gold text-white" id="inputPassword4" value="{{'search' | translate}}" ng-click="searchItem()" style="margin: 0 3px;">
+                                        </div>
+                                </div>
+                                </div>
+                                <div class="form-group col-sm-12 col-md-1">
+                                    <label for="inputPassword1" style="visibility: hidden">Password</label>
+                                    <div class="row">
+                                    <div class="col-12 m-0 mx-auto">
+                                        <input type="button" class="form-control btn btn-gold text-white" id="inputPassword4" value="{{'Required' | translate}}" style="margin: 0 3px !important;">
+                                    </div>
+                                </div>
                                 </div>
                             </div>
                         </form>
