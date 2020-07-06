@@ -1,19 +1,30 @@
 <div class="container" id="search">
     <div class="row" style="margin-top: -50px;">
         <div class="col-md-12">
-            <div class="jumbotron bg-maroon py-4">
+            <div class="jumbotron bg-maroon py-4 px-2">
                 <div class="row">
                     <div class="col-md-12">
                         <form>
                             <div class="form-row text-white">
                                 <div class="form-group search_options col-sm-6 col-md-2">
 
+                                    <label for="sell or rent">{{'sell_rent' | translate}}</label>
+                                    <select class="form-control" id="sell_rent" placeholder="Select" ng-model="select_type" ng-change="change()">
+
+                                    <!-- <option value="">{{'select_municipality' | translate}}</option> -->
+                                    <option value="">{{'please_select' | translate}}</option>
+                                    <option value="sell">{{'Sell' | translate}}</option>
+                                    <option value="rent">{{'Rent1' | translate}}</option>
+                                    <option value="required">{{'Required' | translate}}</option>
+                                    </select>
+                                </div>
+                                <div class="form-group search_options col-sm-6 col-md-1">
+
                                     <label for="Location">{{'municipality' | translate}}</label>
-                                    <!-- <select class="form-control" id="location" placeholder="Select City" ng-model="location" ng-options="x for x in districts"> -->
-                         <!-- <label for="Location">Muncipality</label> -->
                                     <select class="form-control" id="location" placeholder="Select Municipality" ng-model="municipality_id" ng-change="change()" ng-options="x.display_name | translate for x in municipality">
 
                                     <option value="">{{'select_municipality' | translate}}</option>
+                                    <option value="">{{'Other' | translate}}</option>
                                     </select>
                                 </div>
                                 <div class="form-group search_options col-sm-6 col-md-2">
@@ -27,8 +38,6 @@
                                     </select>
                                 </div>
                                 <div class="form-group search_options col-sm-6 col-md-2">
-
-                         
                                     <label for="inputPassword4">{{'property_type' | translate}}</label>
                                     <select class="form-control" id="propertyType" placeholder="Property Type" ng-model="property_id" ng-options="x.display_name | translate for x in property">
                                     <option value="">{{'type_of_property' | translate}}</option>
@@ -51,16 +60,9 @@
                                         <div class="col-12 m-0 mx-auto">
                                             <input type="button" class="form-control btn btn-gold text-white" id="inputPassword4" value="{{'search' | translate}}" ng-click="searchItem()" style="margin: 0 3px;">
                                         </div>
-                                </div>
-                                </div>
-                                <div class="form-group col-sm-12 col-md-1">
-                                    <label for="inputPassword1" style="visibility: hidden">Password</label>
-                                    <div class="row">
-                                    <div class="col-12 m-0 mx-auto">
-                                        <input type="button" class="form-control btn btn-gold text-white" id="inputPassword4" value="{{'Required' | translate}}" style="margin: 0 3px !important;">
                                     </div>
                                 </div>
-                                </div>
+
                             </div>
                         </form>
                     </div>

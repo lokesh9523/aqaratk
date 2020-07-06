@@ -103,6 +103,14 @@ a:hover {
     border-radius: 0px;
 }
 
+.btn-red {
+    color: #fff;
+    background: #af0000;
+    border-color: #af0000;
+    border-radius: 0px;
+}
+
+
 .btn-gold {
     color: #fff;
     background: #fec801;
@@ -160,4 +168,15 @@ a:hover {
 
 .vertical-align-sub {
     vertical-align: sub;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

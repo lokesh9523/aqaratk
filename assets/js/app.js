@@ -40,7 +40,7 @@ var translationsEN = {
     first_name: 'First Name',
     last_name: 'Last Name',
     email: 'Email',
-    subject: 'Subject / Remark about out Site',
+    subject: 'Subject / Remark about our Site',
     Submit: 'Submit',
     municipality: 'Municipality',
     property_type: 'Property Type',
@@ -249,7 +249,7 @@ var translationsEN = {
     "Commercial": "Commercial",
     "Sell": "Sell",
     "Buy": "Buy",
-    "Rent": "Rent",
+    "Rent1": "Rent",
     "Fully Furnished":"Fully Furnished",
     "Semi Furnished":"Semi Furnished",
     required: 'Required',
@@ -270,7 +270,7 @@ var translationsEN = {
     "Required":"Required",
     "sell_or_rent":"Sell or Rent",
     "about_the_property":"About the Property",
-    "please_select":"Please Select"
+    "please_select":"Please Select",
 };
 
 var translationsAR = {
@@ -296,7 +296,7 @@ var translationsAR = {
     follow_us: 'تابعنا',
     our_loc: 'موقعنا',
     Copyright: 'جميع الحقوق محفوظة',
-    home: 'ابحث واحصل على أفضل العقارات المبوبة معنا!',
+    home: 'ابحث واحصل على أفضل العقارات معنا!',
     // all_rights : 'كل الحقوق محفوظة',
     Mobile: 'الجوال',
     about_content: 'عقاراتك هي واحدة من الشركات الرائدة في مجال العقارات في السوق القطرية…',
@@ -532,8 +532,8 @@ var translationsAR = {
     "Rent": "إيجار",
     "Fully Furnished":'مفروشة بالكامل',
     "Semi Furnished":"مفروشة بالكامل",
-    // 'required': 'مطلوب',
-    // 'sell_rent' : 'للبيع أو للإيجار',
+    'required': 'مطلوب',
+    'sell_rent' : 'للبيع، للإيجار أو مطلوب',
     "Residential": "سكني",
     "Commercial": "تجاري",
     "Service": "خدمي",
@@ -548,7 +548,9 @@ var translationsAR = {
     "Required":"مطلوب ",
     "sell_or_rent":"للبيع أو للإيجار",
     "about_the_property":"عن العقار",
-    "please_select":"يرجى التحديد"
+    "please_select":"يرجى التحديد",
+    "Real_estate_company": 'مكتب عقارات',
+    "Owners_Agent_Representative": ' مندوب أو وكيل المالك',
 };
 
 var app = angular.module("myApp", ['ngRoute', 'pascalprecht.translate',
