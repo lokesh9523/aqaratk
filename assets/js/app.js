@@ -529,7 +529,7 @@ var translationsAR = {
     "Commercial": "تجاري",
     "Sell": "بيع",
     "Buy": "شراء",
-    "Rent": "إيجار",
+    "Rent1": "إيجار",
     "Fully Furnished":'مفروشة بالكامل',
     "Semi Furnished":"مفروشة بالكامل",
     'required': 'مطلوب',
