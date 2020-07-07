@@ -207,3 +207,32 @@ input[type=number] {
     left: 100%;
     margin-top:-6px;
 } */
+
+
+@media (max-width:478px) {
+    #top_row {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    #search .row {
+        margin-top: 10px !important
+    }
+
+    .mobile_row p{
+        display: block;
+        margin: auto
+    }
+
+    .nav_buttons {
+        margin: 6px auto;
+    } 
+    .btn-maroon {
+        background-color: transparent;
+        color: rgba(0,0,0,.5) !important;
+    }
+}
