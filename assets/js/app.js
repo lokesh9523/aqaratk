@@ -253,7 +253,7 @@ var translationsEN = {
     "Fully Furnished":"Fully Furnished",
     "Semi Furnished":"Semi Furnished",
     'required': 'Required',
-    'sell_rent' : 'Sell, Rent or Required:',
+    'sell_rent' : 'Sell, Rent or Required',
     "Fully Furnished": "Fully Furnished",
     "Semi Furnished": "Semi Furnished",
     "Residential": "Residential",
@@ -268,7 +268,7 @@ var translationsEN = {
     "Manor": "Manor",
     "Mainland House": "Mainland House",
     "Required":"Required",
-    "sell_or_rent":"Sell, Rent or Required:",
+    "sell_or_rent":"Sell, Rent or Required",
     "about_the_property":"About the Property",
     "please_select":"Please Select",
 };
