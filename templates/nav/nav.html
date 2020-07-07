@@ -5,29 +5,32 @@
                 <div class="row py-2" id="top_row">
                     <div class="col-xs-12 col-md-4">
                         <!-- <a href="#" data-toggle="modal" data-target="#loginModal" class="text-white text-uppercase"><small>Login</small></a> -->
-                        <a href="#" data-toggle="modal" id="login_text" data-target="#loginModal" class="text-white"><small>{{'LOGIN'|translate}}</small></a>
+                        <a href="#" data-toggle="modal" id="login_text" data-target="#loginModal"
+                            class="text-white"><small>{{'LOGIN'|translate}}</small></a>
                         <span class="text-white mx-3 vertical-text-bottom"><small>|</small></span>
-                        <a href="#" data-toggle="modal" data-target="#registerModal" class="text-white text-uppercase"><small>{{'REGISTER' | translate}}</small></a>
-                        <a href="#" ng-if="isloggedIn" ng-click="logout()" class="text-white text-uppercase"><small>Logout</small></a>
+                        <a href="#" data-toggle="modal" data-target="#registerModal"
+                            class="text-white text-uppercase"><small>{{'REGISTER' | translate}}</small></a>
+                        <a href="#" ng-if="isloggedIn" ng-click="logout()"
+                            class="text-white text-uppercase"><small>Logout</small></a>
                     </div>
                     <div class="col-xs-12 col-md-8 text-md-right text-xs-left">
                         <!-- <span class="fa fa-phone text-white mr-2 vertical-text-bottom"></span><a href="tel:12345678" class="text-white text-uppercase mr-4"><small>(+974) 1234 5678</small></a> -->
                         <!-- <span class="fa fa-map-marker text-white mr-2 vertical-text-bottom"></span><small class="text-white">Westbay, Doha, {{'Qatar' | translate}}</small>
                         <span> -->
-                       <!-- <small>
+                        <!-- <small>
                              <select id="language" ng-model="langType" ng-options = "x.language for x in languages">
                                 <option value=""></option>
                             </select> 
                         </small> -->
                         <small>
-                        <div>
-                            <button ng-click="changeLanguage('ar')" translate="{{'AR' | translate}}"></button>
-                            <button ng-click="changeLanguage('en')" translate="EN"></button>
-                          </div>
+                            <div>
+                                <button ng-click="changeLanguage('ar')" translate="{{'AR' | translate}}"></button>
+                                <button ng-click="changeLanguage('en')" translate="EN"></button>
+                            </div>
                         </small>
                         </span>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -37,15 +40,18 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white py-4">
     <div class="container">
-        <a class="navbar-brand" href="/"><img src="assets/img/main/logo.PNG" id="logo" class="img-fluid" width="200"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="/"><img src="assets/img/main/logo.PNG" id="logo" class="img-fluid"
+                width="200"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item text-uppercase">
-                    <span class="mr-3"><small class="text-white border-bottom-maroon">&mdash;&mdash;&mdash;&mdash;</small></span>
+                    <span class="mr-3"><small
+                            class="text-white border-bottom-maroon">&mdash;&mdash;&mdash;&mdash;</small></span>
                 </li>
                 <li class="nav-item text-uppercase">
                     <a class="nav-link" href="/">{{'Home' | translate}}</a>
@@ -54,28 +60,66 @@
                     <a class="nav-link" href="/about">{{'about_us' | translate}}</a>
                 </li>
                 <li class="nav-item dropdown text-uppercase">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {{'Properties' | translate}}
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">{{'Sell' | translate}}</a>
+                    <ul class="dropdown-menu">
+                        <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown"> -->
+                        <li class="dropdown-submenu">
+                            <a href="#" class="nav-link dropdown-item dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <span class="nav-label">{{'Sell' | translate}}</span><span class="caret">
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a href="#" class="nav-link">Service C1</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link">Service C2</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link">Service C3</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link">Service C4</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link">Service C5</a></li>
+                            </ul>
+                        </li>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">{{'Rent1' | translate}}</a>
-                        <div class = "dropdown-divider"></div>
-                        <a class = "dropdown-item" href = "#">{{'Required' | translate}}</a>
-                    </div>
+                        <li class="dropdown-submenu">
+                            <a href="#" class="nav-link dropdown-item dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <span class="nav-label">{{'Rent1' | translate}}</span><span class="caret">
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a href="#" class="nav-link">Service C1</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link">Service C2</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link">Service C3</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link">Service C4</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link">Service C5</a></li>
+                            </ul>
+                        </li>
+                        <div class="dropdown-divider"></div>
+                        <li class="dropdown-submenu">
+                            <a href="#" class="nav-link dropdown-item dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <span class="nav-label">{{'Required' | translate}}</span><span class="caret">
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a href="#" class="nav-link">Service C1</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link">Service C2</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link">Service C3</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link">Service C4</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link">Service C5</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- </div> -->
+                    </ul>
                 </li>
                 <li class="nav-item text-uppercase">
                     <a class="nav-link" href="/contact">{{'Contact' | translate}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-maroon px-4 text-white" href="/post">{{'post' | translate}} {{'property' | translate}}</a>
+                    <a class="nav-link btn btn-maroon px-4 text-white" href="/post">{{'post' | translate}}
+                        {{'property' | translate}}</a>
                 </li>
-                <li class = "nav-item">
-                    <a class = "nav-link btn btn-maroon px-4 text-white" href = "/search">{{'search' | translate}}</a>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-maroon px-4 text-white" href="/search">{{'search' | translate}}</a>
                 </li>
-                <li class = "nav-item">
-                    <a class = "nav-link btn btn-red px-4 text-white" href = "/post">{{'required' | translate}}</a>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-red px-4 text-white" href="/post">{{'required' | translate}}</a>
                 </li>
             </ul>
         </div>
@@ -85,28 +129,32 @@
 
 <!-- Login Modal -->
 
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" ng-controller="loginController" >
-    
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" ng-controller="loginController">
+
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header bg-maroon">
                 <h5 class="modal-title text-center text-white">{{'Login' | translate}}</h5>
                 <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <form name="loginForm">
                     <div class="form-group">
                         <label for="username">{{'Username' | translate}}*</label>
-                        <input type="text" class="form-control" id="login_username" name="username" ng-model="user_name" required>
+                        <input type="text" class="form-control" id="login_username" name="username" ng-model="user_name"
+                            required>
                     </div>
                     <div class="form-group">
                         <label for="password">{{'Password' | translate}}*</label>
-                        <input type="password" class="form-control" id="login_password" name="password" ng-model="password" required>
+                        <input type="password" class="form-control" id="login_password" name="password"
+                            ng-model="password" required>
                     </div>
-                    <input class="btn btn-primary text-white" type="submit" name="login" value="{{'Login' | translate}}" ng-click="submitLogin()">
-                    <a href="" ng-click = "forgetpassword()"><small><span class="pt-4 float-right">{{'forgot_pwd' | translate}}</span></small></a>
+                    <input class="btn btn-primary text-white" type="submit" name="login" value="{{'Login' | translate}}"
+                        ng-click="submitLogin()">
+                    <a href="" ng-click="forgetpassword()"><small><span
+                                class="pt-4 float-right">{{'forgot_pwd' | translate}}</span></small></a>
                 </form>
                 <div ng-if="errorMessage" style="color:red">{{ errorMessage }}</div>
             </div>
@@ -127,12 +175,13 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form name="registrationForm" >
+                <form name="registrationForm">
 
                     <div class="form-group">
                         <div class="well danger">{{errorMessage}}</div>
                         <label for="username">{{'Username' | translate}}*</label>
-                        <input type="text" class="form-control" id="username" name="username" ng-model="user_name" required>
+                        <input type="text" class="form-control" id="username" name="username" ng-model="user_name"
+                            required>
                     </div>
 
                     <!-- <div class="form-group">
@@ -142,18 +191,20 @@
 
                     <div class="form-group">
                         <label for="Phone">{{'phone_num' | translate}}*</label>
-                        <input type="number" class="form-control" id="phone_number" name="mobile" ng-model="mobile_number" required>
+                        <input type="number" class="form-control" id="phone_number" name="mobile"
+                            ng-model="mobile_number" required>
                     </div>
                     <div class="form-group">
                         <label for="inputPassword4">{{'Adjective' | translate}}</label>
                         <select class="form-control" id="inputEmail4" placeholder="Email" ng-model="adjecive" required>
-                          <option value="">{{'please_select' | translate}}</option>
-                          <option value = "Owner">{{'Owner' | translate}}</option>
-                          <option value = "Buyer/Renter">{{'Buyer_Renter' | translate}}</option>
-                          <option value = "Investor">{{'Investor' | translate}}</option>
-                          <option value = "Owners_Agent_Representative">{{'Owners_Agent_Representative' | translate}}</option>
-                          <option value = "Mediator">{{'Mediator' | translate}}</option>
-                          <option value = "Real_estate_company">{{'Real_estate_company' | translate}}</option>
+                            <option value="">{{'please_select' | translate}}</option>
+                            <option value="Owner">{{'Owner' | translate}}</option>
+                            <option value="Buyer/Renter">{{'Buyer_Renter' | translate}}</option>
+                            <option value="Investor">{{'Investor' | translate}}</option>
+                            <option value="Owners_Agent_Representative">{{'Owners_Agent_Representative' | translate}}
+                            </option>
+                            <option value="Mediator">{{'Mediator' | translate}}</option>
+                            <option value="Real_estate_company">{{'Real_estate_company' | translate}}</option>
                         </select></div>
                     <div class="form-group">
                         <label for="name">{{'Name' | translate}}*</label>
@@ -161,9 +212,11 @@
                     </div>
                     <div class="form-group">
                         <label for="password">{{'Password' | translate}}*</label>
-                        <input type="password" class="form-control" id="password" name="password" ng-model="password" required>
+                        <input type="password" class="form-control" id="password" name="password" ng-model="password"
+                            required>
                     </div>
-                    <input class="btn btn-dark text-white" type="submit" name="register" value="{{'Register' | translate}}" ng-click="submitRegister()">
+                    <input class="btn btn-dark text-white" type="submit" name="register"
+                        value="{{'Register' | translate}}" ng-click="submitRegister()">
                 </form>
                 <div ng-if="errorMessage" style="color:red">{{ errorMessage }}</div>
             </div>
