@@ -181,6 +181,10 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+#search {
+    width: 1100px;
+}
+
 
   .dropdown-submenu>a:after {
     content: "\f0da";
@@ -207,3 +211,43 @@ input[type=number] {
     left: 100%;
     margin-top:-6px;
 } */
+
+@media (max-width:768px) {
+    #search {
+        width: 768px;
+    }
+
+    .col-sm-6 {
+        flex: 0 0 50%;
+        max-width: 60%;
+    }
+}
+
+
+@media (max-width:478px) {
+    #top_row {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    #search .row {
+        margin-top: 10px !important
+    }
+
+    .mobile_row p{
+        display: block;
+        margin: auto
+    }
+
+    .nav_buttons {
+        margin: 6px auto;
+    } 
+    .btn-maroon {
+        background-color: transparent;
+        color: rgba(0,0,0,.5) !important;
+    }
+}

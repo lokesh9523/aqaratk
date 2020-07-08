@@ -555,6 +555,7 @@ var translationsEN = {
     "Semi Furnished": "Semi Furnished",
     'required': 'Required',
     'sell_rent': 'Sell, Rent or Required',
+    'sell_rent' : 'Sell, Rent/Required',
     "Fully Furnished": "Fully Furnished",
     "Semi Furnished": "Semi Furnished",
     "Residential": "Residential",
