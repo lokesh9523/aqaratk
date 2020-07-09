@@ -1,12 +1,12 @@
 <div class="container" id="search">
-    <div class="row" style="margin-top: -50px;">
-        <div class="col-md-12">
-            <div class="jumbotron bg-maroon py-4 px-2">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="jumbotron bg-maroon py-4 px-2" style="margin-top: -50px;">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
                         <form>
-                            <div class="row form-row text-white">
-                                <div class="col-sm-6 col-md-2  search_options ">
+                            <div class="row text-white">
+                                <div class="col-xs-12 col-sm-6 col-md-2 search_options ">
 
                                     <label for="sell or rent">{{'sell_rent' | translate}}</label>
                                     <select class="form-control" id="sell_rent" placeholder="Select" ng-model="select_type" ng-change="change()">
@@ -18,7 +18,7 @@
                                     <option value="required">{{'Required' | translate}}</option>
                                     </select>
                                 </div>
-                                <div class=" search_options col-sm-6 col-md-1">
+                                <div class=" search_options col-xs-12 col-sm-6 col-md-1">
 
                                     <label for="Location">{{'municipality' | translate}}</label>
                                     <select class="form-control" id="location" placeholder="Select Municipality" ng-model="municipality_id" ng-change="change()" ng-options="x.display_name | translate for x in municipality">
@@ -27,7 +27,7 @@
                                     <option value="">{{'Other' | translate}}</option>
                                     </select>
                                 </div>
-                                <div class=" search_options col-sm-6 col-md-2">
+                                <div class=" search_options col-xs-12 col-sm-6 col-md-2">
 
                                     <label for="Location">{{'area' | translate}}</label>
                                     <!-- <select class="form-control" id="location" placeholder="Select City" ng-model="location" ng-options="x for x in districts"> -->
@@ -37,24 +37,24 @@
                                     <option value="">{{'select_area' | translate}}</option>
                                     </select>
                                 </div>
-                                <div class=" search_options col-sm-6 col-md-2">
+                                <div class=" search_options col-xs-12 col-sm-6 col-md-2">
                                     <label for="inputPassword4">{{'property_type' | translate}}</label>
                                     <select class="form-control" id="propertyType" placeholder="Property Type" ng-model="property_id" ng-options="x.display_name | translate for x in property">
                                     <option value="">{{'type_of_property' | translate}}</option>
                                     </select> </div>
-                                <div class=" search_options col-sm-6 col-md-2">
+                                <div class=" search_options col-xs-12 col-sm-6 col-md-2">
                                     <label for="inputPassword4">{{'num_of_bed' | translate}}</label>
                                     <select class="form-control" id="inputEmail4" placeholder="Email" ng-model="no_of_bed_rooms" ng-options="x for x in num_bedrooms">
                                     <option value="">{{'bedroom_select' | translate}}</option>
                                     </select> </div>
 
-                                <div class=" search_options col-sm-6 col-md-2">
+                                <div class=" search_options col-xs-12 col-sm-6 col-md-2">
                                     <label for="inputPassword4">{{'furniture' | translate}}</label>
 
                                     <select class="form-control" id="inputEmail4" placeholder="Email" ng-model="furniture" ng-options = "x | translate for x in furniture_type">
                                       <option value="">{{'select_furniture' | translate}}</option>
                                     </select> </div>
-                                <div class=" col-sm-6 col-md-1">
+                                <div class="col-xs-12 col-sm-6 col-md-1">
                                     <label for="inputPassword1" style="visibility: hidden">Password</label>
                                     <div class="row">
                                         <div class="col-12 m-0 mx-auto">

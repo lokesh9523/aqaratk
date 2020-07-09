@@ -52,6 +52,13 @@
             iframe.contentDocument.style.width = '100%'
             $('#imageModal').modal('handleUpdate')
         }
+        $('.dropdown-submenu>ul').hide();
+        $('.dropdown-submenu>a').unbind('click').click(function(e){
+        $('.dropdown-submenu>ul.dropdown-menu').hide();
+        $(this).next('ul').toggle();
+        e.stopPropagation();
+        e.preventDefault();
+    });
     </script>
 </body>
 

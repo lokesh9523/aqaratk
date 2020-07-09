@@ -44,7 +44,7 @@ html {
 
 /* FORMS */
 
-.form-control .search_options {
+.search_options {
     border: 0px solid #ced4da !important;
     border-radius: 0rem !important;
 }
@@ -203,6 +203,7 @@ input[type=number] {
   .navbar-nav li:hover > ul.dropdown-menu {
     display: block;
 }
+
 .dropdown-submenu {
     position:relative;
 }
@@ -219,12 +220,18 @@ input[type=number] {
 
     .col-sm-6 {
         flex: 0 0 50%;
-        max-width: 60%;
+        max-width: 50%;
     }
+    
 }
 
 
 @media (max-width:478px) {
+    .col-xs-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
     #top_row {
         text-align: center;
     }
@@ -250,4 +257,12 @@ input[type=number] {
         background-color: transparent;
         color: rgba(0,0,0,.5) !important;
     }
+    #search {
+        width: 450px !important;
+    }
+    
+    #search .jumbotron {
+        margin-top: 0 !important;
+    }
+    
 }
