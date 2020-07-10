@@ -66,7 +66,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown"> -->
-                        <li class="dropdown-submenu">
+                        <div class="dropdown-submenu">
                             <a href="#" class="nav-link dropdown-item dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             <span class="nav-label">{{'Sell' | translate}}</span><span class="caret">
                             </a>
@@ -97,7 +97,7 @@
                                 <li class="nav-item"><a href="/traditional_villa" class="nav-link">{{'Traditional Villa' | translate}}</a></li>
                                 <li class="nav-item"><a href="/villa" class="nav-link">{{'Villa' | translate}}</a></li>
                             </ul>
-                        </li>
+                        </div>
                         <div class="dropdown-divider"></div>
                         <li class="dropdown-submenu">
                             <a href="#" class="nav-link dropdown-item dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -244,11 +244,6 @@
                             required>
                     </div>
 
-                    <!-- <div class="form-group">
-                        <label for="Email">{{'email' | translate}}*</label>
-                        <input type="email" class="form-control" id="email" name="email" ng-model="email" required>
-                    </div> -->
-
                     <div class="form-group">
                         <label for="Phone">{{'phone_num' | translate}}*</label>
                         <input type="number" class="form-control" id="phone_number" name="mobile"
@@ -283,3 +278,9 @@
         </div>
     </div>
 </div>
+
+<script>
+$('.dropdown-submenu>ul>li>a').on('click', function(){
+    $('.navbar-collapse').collapse('hide');
+});
+</script>
