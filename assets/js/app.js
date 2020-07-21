@@ -649,7 +649,7 @@ var translationsAR = {
     Buyer_Renter: 'مشتري/مستأجر',
     Investor: 'مستثمر',
     Owners_Agent_Representative: 'مندوب أو وكيل المالك',
-    Mediator: 'وسيك',
+    Mediator: 'وسيط',
     Real_estate_company: 'مكتب عقارات',
     Login: 'دخول',
     AR: 'عربي',
