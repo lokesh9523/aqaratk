@@ -1171,7 +1171,7 @@ var translationsAR = {
     "Administrative": "إداري",
     "Farm": "مزرعة",
     "Hotel": "فندق",
-    "Traditional Villa": "فيلا شعبية",
+    "Traditional Villa": "بيت شعبي",
     "Lounge": " إستراحة",
     "Chalet": "شاليه",
     "Manor": "عزبه",
