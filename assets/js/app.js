@@ -558,6 +558,7 @@ var translationsEN = {
     'sell_rent' : 'Sell, Rent/Required',
     "Fully Furnished": "Fully Furnished",
     "Semi Furnished": "Semi Furnished",
+    "Unfurnished" : "Unfurnished",
     "Residential": "Residential",
     "Commercial": "Commercial",
     "Service": "Service",
@@ -1161,8 +1162,9 @@ var translationsAR = {
     "Sell": "بيع",
     "Buy": "شراء",
     "Rent1": "إيجار",
-    "Fully Furnished": 'مفروشة بالكامل',
-    "Semi Furnished": "مفروشة بالكامل",
+    "Fully Furnished": 'فرش كامل',
+    "Semi Furnished": "نصف فرش",
+    "Unfurnished" : "غير مفروش",
     'required': 'مطلوب',
     'sell_rent': 'للبيع، للإيجار أو مطلوب',
     "Residential": "سكني",
@@ -1382,7 +1384,7 @@ app.controller("journalGlobalController", ["$translate", "$scope", "loginService
             alert("Select Atleast One Field")
         }
     }
-    $scope.furniture_type = ['Semi Furnished', 'Fully Furnished']
+    $scope.furniture_type = ['Semi Furnished', 'Fully Furnished','Unfurnished']
 
     $scope.forgetpassword = function () {
         window.location.href = "/forgot_password";
