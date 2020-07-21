@@ -4,7 +4,7 @@ var translationsEN = {
     LOCATION: 'Westbay, Doha, Qatar',
     SUBTITLE: 'Subtitle',
     QATAR: 'Qatar',
-    IDEAL: 'FIND YOUR IDEAL',
+    IDEAL: 'We provide you with the finest',
     APARTMENT: 'APARTMENT',
     RENT: 'FOR RENT',
     WITH_US: 'WITH US',
@@ -30,7 +30,7 @@ var translationsEN = {
     intro_text: 'Aqaratk is one of the leaders in the real estate  in the Qatari market, we offer quality residential and commercial properties in Qatar to our esteemed costumers. As we provide as well our large expertise in  other related fields, such as: selling, rent, ownership and purchasing of lands.',
     chairman: 'Chairman Message',
     chairman_msg: 'We aim to rise the bar of real estate sector in the State of Qatar.',
-    chairman_name: 'ALI H. A. AL-MARRI',
+    chairman_name: 'The Owner',
     vision: 'Vision',
     vision_msg: '"To be leader of real estate different services in/outside Qatar and to offer the best solutions to our costumers and agents"',
     mission: 'Mission',
@@ -573,6 +573,11 @@ var translationsEN = {
     "sell_or_rent": "Sell, Rent or Required",
     "about_the_property": "About the Property",
     "please_select": "Please Select",
+    "tnc1" : "I acknowledge that I am solely responsible for using the website when logging in to Aqaratk Website.",
+    "tnc2" : 'Not to collect any personal information for commercial purposes including full name, address and email.',
+    "tnc3" : "I acknowledge that I am solely responsible for providing my content, including chats, profile information, links, images, other content, etc.",
+    "tnc" : "Terms and Conditions",
+    "tnc_text" : "Agree on our",
 };
 
 var translationsAR = {
@@ -581,7 +586,7 @@ var translationsAR = {
     LOCATION: 'الدوحة, قطرالخليج, الغربي',
     SUBTITLE: 'العنوان الفرعي',
     QATAR: 'دولة قطر',
-    IDEAL: 'تجد المثالي الخاص بك',
+    IDEAL: 'نوفر لك الأرقى',
     APARTMENT: 'شقة',
     RENT: 'للإيجار',
     WITH_US: 'معنا',
@@ -598,7 +603,7 @@ var translationsAR = {
     follow_us: 'تابعنا',
     our_loc: 'موقعنا',
     Copyright: 'جميع الحقوق محفوظة',
-    home: 'ابحث واحصل على أفضل العقارات معنا!',
+    home: '!ابحث واحصل على أفضل العقارات معنا',
     // all_rights : 'كل الحقوق محفوظة',
     Mobile: 'الجوال',
     about_content: 'عقاراتك هي واحدة من الشركات الرائدة في مجال العقارات في السوق القطرية…',
@@ -609,7 +614,7 @@ var translationsAR = {
     intro_text: 'عقاراتك هي واحدة من الشركات الرائدة في مجال العقارات في السوق القطرية، إذ نقدم عقارات سكنية وتجارية ذات جودة عالية لعملائنا الكرام داخل قطر. كما نقدم كذلك خبرتنا الكبيرة في مجالات الأخرى ذات الصلة، مثل: البيع ، الإيجار ، التملك وشراء الأراضي.',
     chairman: 'كلمة مالك الموقع',
     chairman_msg: 'نطمح للرقي بمجال العقارات في دولة قطر.',
-    chairman_name: 'علي أ. المري',
+    chairman_name: 'مالك الموقع',
     vision: 'رؤيتنا',
     vision_msg: '"أن نكون رائدين في الخدمات العقارية المختلفة داخل وخارج قطر وأن نقدم أفضل الحلول لعملائنا ووكلائنا"',
     mission: 'مهمتنا',
@@ -1177,6 +1182,12 @@ var translationsAR = {
     "please_select": "يرجى التحديد",
     "Real_estate_company": 'مكتب عقارات',
     "Owners_Agent_Representative": ' مندوب أو وكيل المالك',
+    "tnc1" : "أقر بأني المسؤول الوحيد عن استخدام الموقع عند تسجيل الدخول إلى عقاراتك",
+    "tnc2" : 'عدم القيام بجمع أي معلومات شخصية لأغراض تجارية بما في ذلك الاسم الكامل، والعنوان، والبريد الإلكتروني.',
+    "tnc3" : "أقر بأني المسؤول الوحيد عن تقديم المحتوى الخاص بي، بما في ذلك المحادثات، ومعلومات الملف الشخصي، والروابط، والصور، والمحتويات الأخرى، وما شابه ذلك",
+    "tnc" : "الشروط والأحكام",
+    "tnc_text" : "الموافقة على",
+    // "tnc_link" : "الشروط والأحكام"
 };
 
 var app = angular.module("myApp", ['ngRoute', 'pascalprecht.translate',
@@ -1264,7 +1275,6 @@ app.controller("journalGlobalController", ["$translate", "$scope", "loginService
                 //   document.getElementById('mobile_num').style.direction ='ltr';
                 document.getElementById('logo').setAttribute('src', 'assets/img/main/logo_ar.png');
                 document.getElementById('logo_white').setAttribute('src', 'assets/img/main/logo_white_ar.png');
-
             }
             else {
                 console.log("iam here")
