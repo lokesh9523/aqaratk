@@ -1462,7 +1462,7 @@ app.controller("propertyController", ["$scope", "propertyService", "$cookies", "
     }
     $scope.num_bedrooms = [1, 2, 3, 4, 5, 6];
 
-    $scope.furniture_type = ['Semi Furnished', 'Fully Furnished']
+    $scope.furniture_type = ['Semi Furnished', 'Fully Furnished','Unfurnished']
     var api = 'http://15.206.186.93:3001/property/types'
     propertyService.getPropertyTypes(api).then(function (data) {
         $scope.property = data
@@ -1562,7 +1562,7 @@ app.controller("searchController", ['$scope', 'propertyService', '$cookies', '$t
     }
     // $scope.num_bedrooms = [1, 2, 3, 4, 5, 6];
 
-    $scope.furniture_type = ['Semi Furnished', 'Fully Furnished']
+    $scope.furniture_type = ['Semi Furnished', 'Fully Furnished','Unfurnished']
     const urlParams = new URLSearchParams(window.location.search);
     let property_id = urlParams.get('property_id');
     let location_id = urlParams.get('location_id');
