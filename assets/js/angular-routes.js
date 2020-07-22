@@ -132,9 +132,5 @@ app.config(function ($routeProvider, $locationProvider) {
       templateUrl: "templates/search/villa.html",
       controller: 'propertyController'
     })
-    .when("/tnc", {
-      templateUrl: "templates/termsandconditions.html",
-      controller: 'propertyController'
-    })
   $locationProvider.html5Mode(true)
 });

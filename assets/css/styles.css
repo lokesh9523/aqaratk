@@ -126,7 +126,7 @@ a:hover {
     content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
     color: #8d1b3d; /* Change the color */
     font-weight: 1000; /* If you want it to be bold */
-    display: inline-block; /* Needed to add space between the bullet and the text */
+    /* display: inline-block; Needed to add space between the bullet and the text */
     width: 2em; /* Also needed for space (tweak if needed) */
     margin-left: -1em; /* Also needed for space (tweak if needed) */
   }
