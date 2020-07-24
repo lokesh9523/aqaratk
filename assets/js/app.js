@@ -593,7 +593,7 @@ var translationsEN = {
     "Al Nasraniya":"Al Nasraniya",
     "Al Murra":"Al Murra",
     "Al Manaseer":"Al Manaseer",
-    "West Bay–Lagoon":"West Bay – Lagoon",
+    "West Bay-Lagoon":"West Bay – Lagoon",
     "Onaiza":"Onaiza",
     "Old Salatah":"Old Salatah",
     'Old Al Khulaifat':"Old Al Khulaifat",
@@ -604,17 +604,26 @@ var translationsEN = {
     "Jelaiah":"Jelaiah",
     "Heart of Hoaha":"Heart of Hoaha",
     "Duhail":"Duhail",
-    "Diplomatic Area":"Diplomatic Area",
-    "Al Sadd":"Al Sadd",
+    "Diplomatci Area":"Diplomatic Area",
+    "Al sadd":"Al Sadd",
     "Al Muntazah":"Al Muntazah",
     "Al Asiri":"Al Asiri",
     "Freej Al Ali":"Freej Al Ali",
+    "Al Nuaim-Leabaib":"Al Nuaim - Leabaib",
+    "Rawdat Rasid":"Rawdat Rasid",
+    "Mesaimeer":"Mesaimeer",
+    "Old Khulaifat":"Old Khulaifat"
+    
 
 
 };
 
 var translationsAR = {
-    "West Bay–Lagoon":"الخليج الغربي - لاغون",
+    "Old Khulaifat":"الخليفات القديمة",
+    "Rawdat Rasid":"روضة راشد",
+    "Mesaimeer":"مسيمير",
+    "Al Nuaim-Leabaib":"النعيم - لعبيب",
+    "West Bay-Lagoon":"الخليج الغربي - لاغون",
     "Onaiza":"عنيزة",
     "Old Salatah":"السلطة  القديمة",
     "Old Al Khulaifat":"الخليفات القديمة",
@@ -626,8 +635,8 @@ var translationsAR = {
     "Heart of Hoaha":"قلب الدوحة",
     "Freej Al Ali":"فريج العلي",
     "Duhail":"الدحيل",
-    "Diplomatic Area":"المنطقة الدبلوماسية",
-    "Al Sadd":"السد",
+    "Diplomatci Area":"المنطقة الدبلوماسية",
+    "Al sadd":"السد",
     "Al Muntazah":"المنتزه",
     "Al Asiri":"العسيري",
     "South Salwa St.":"جنوب شارع سلوى",
