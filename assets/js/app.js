@@ -1315,11 +1315,9 @@ app.config(['$translateProvider', function ($translateProvider) {
 
 app.service('fileUpload', ['$http', '$q', function ($http, $q) {
     this.uploadFileToUrl = function (file, uploadUrl) {
-        console.log("iam here")
         var def = $q.defer();
         var fd = new FormData();
         fd.append('image', file);
-        console.log(fd);
 
         $http.post(uploadUrl, fd, {
             transformRequest: angular.identity,
@@ -1340,16 +1338,13 @@ app.controller("journalGlobalController", ["$translate", "$scope", "loginService
     if ($cookies.get('language')) {
         $translate.use($cookies.get('language'));
         window.onload = function () {
-            console.log("iam here1111");
             if ($cookies.get('language') === 'ar') {
-                console.log('Language is arabic');
                 //   document.getElementById('login_text').style.float ='left';
                 //   document.getElementById('mobile_num').style.direction ='ltr';
                 document.getElementById('logo').setAttribute('src', 'assets/img/main/logo_ar.png');
                 document.getElementById('logo_white').setAttribute('src', 'assets/img/main/logo_white_ar.png');
             }
             else {
-                console.log("iam here")
                 document.getElementById('logo').setAttribute('src', 'assets/img/main/logo.PNG');
                 document.getElementById('logo_white').setAttribute('src', 'assets/img/main/logo-white.png');
             }
@@ -1413,41 +1408,45 @@ app.controller("journalGlobalController", ["$translate", "$scope", "loginService
     const urlParams = new URLSearchParams(window.location.search);
     // console.log(urlParams.get('property_id'), urlParams.get('location_id'), urlParams.get('no_of_bed_rooms'), urlParams.get('furniture'))
 
-    if (urlParams.get('municipality_id') || urlParams.get('property_id') || urlParams.get('location_id') || urlParams.get('no_of_bed_rooms') || urlParams.get('furniture')) {
+    // if (urlParams.get('municipality_id') || urlParams.get('property_id') || urlParams.get('location_id') || urlParams.get('no_of_bed_rooms') || urlParams.get('furniture') || urlParams.get('type')) {
 
-        var postParams = {
-            'municipality_id': urlParams.get('municipality_id') ? urlParams.get('municipality_id') : '',
-            'location_id': urlParams.get('location_id') ? urlParams.get('location_id') : '',
-            'property_id': urlParams.get('property_id') ? urlParams.get('property_id') : '',
-            'no_of_bed_rooms': urlParams.get('no_of_bed_rooms') ? urlParams.get('no_of_bed_rooms') : '',
-            'furniture': urlParams.get('furniture') ? urlParams.get('furniture') : ''
-        };
-        // console.log($scope.property_id,$scope.location_id,postParams)
-        var searchapi = 'http://15.206.186.93:3001/property/search';
-        return propertyService.search(searchapi, postParams).then(function (data) {
-            $scope.totalproperty = data;
+    //     var postParams = {
+    //         'municipality_id': urlParams.get('municipality_id') ? urlParams.get('municipality_id') : '',
+    //         'location_id': urlParams.get('location_id') ? urlParams.get('location_id') : '',
+    //         'property_id': urlParams.get('property_id') ? urlParams.get('property_id') : '',
+    //         'no_of_bed_rooms': urlParams.get('no_of_bed_rooms') ? urlParams.get('no_of_bed_rooms') : '',
+    //         'furniture': urlParams.get('furniture') ? urlParams.get('furniture') : '',
+    //         'type':urlParams.get('type') ? urlParams.get('type') : ''
+    //     };
+    //     // console.log($scope.property_id,$scope.location_id,postParams)
+    //     var searchapi = 'http://15.206.186.93:3001/property/search';
+    //     return propertyService.search(searchapi, postParams).then(function (data) {
+    //         $scope.totalproperty = data;
 
-        }).catch(function (error) {
-            $scope.errorMessage = error.data;
-        });
+    //     }).catch(function (error) {
+    //         $scope.errorMessage = error.data;
+    //     });
 
 
-    } else {
-    }
+    // } else {
+    // }
+    
     $scope.searchItem = function () {
-        if ($scope.municipality_id || $scope.location_id || $scope.property_id || $scope.no_of_bed_rooms || $scope.furniture) {
-            console.log("iam here")
+        if ($scope.municipality_id || $scope.location_id || $scope.property_id || $scope.no_of_bed_rooms || $scope.furniture || $scope.sell_rent) {
+           
             var postParams = {
                 'municipality_id': $scope.municipality_id ? $scope.municipality_id.id : '',
                 'location_id': $scope.location_id ? $scope.location_id.id : '',
                 'property_id': $scope.property_id ? $scope.property_id.id : '',
                 'no_of_bed_rooms': $scope.no_of_bed_rooms ? $scope.no_of_bed_rooms : '',
-                'furniture': $scope.furniture ? $scope.furniture : ''
+                'furniture': $scope.furniture ? $scope.furniture : '',
+                'type':$scope.sell_rent ? $scope.sell_rent : ''
             };
-
+            $cookies.put('params',JSON.stringify(postParams));
+            // window.location.href='/search';
             var api = 'http://15.206.186.93:3001/property/search';
 
-            window.location.href = '/search?municipality_id=' + postParams.municipality_id + '&location_id=' + postParams.location_id + '&property_id=' + postParams.property_id + '&no_of_bed_rooms=' + postParams.no_of_bed_rooms + '&furniture=' + postParams.furniture;
+            window.location.href = '/search?municipality_id=' + postParams.municipality_id + '&location_id=' + postParams.location_id + '&property_id=' + postParams.property_id + '&no_of_bed_rooms=' + postParams.no_of_bed_rooms + '&furniture=' + postParams.furniture + '&type=' +postParams.type;
 
         } else {
             if ($cookies.get('language') === 'ar') {
@@ -1455,7 +1454,7 @@ app.controller("journalGlobalController", ["$translate", "$scope", "loginService
                 alert("حدد على الأقل حقل واحد");
 
             } else {
-                alert("Select Atleast One Field");
+                alert("Select Atleast One Fieldddd");
             }
         }
     }
@@ -1488,7 +1487,6 @@ app.controller("loginController", ['$scope', 'loginService', '$cookies', "$trans
                 window.location.href = "/";
             })
             .catch(function (error) {
-                console.log(error)
                 $scope.errorMessage = error.data;
             });
     };
@@ -1552,8 +1550,7 @@ app.controller("propertyController", ["$scope", "propertyService", "$cookies", "
 
     var municipalityapi = 'http://15.206.186.93:3001/municipality'
     propertyService.getMunicipality(municipalityapi).then(function (data) {
-        $scope.municipality = data
-        console.log($scope.municipality)
+        $scope.municipality = data;
 
     }).catch(function (error) {
         $scope.errorMessage = error.data;
@@ -1585,15 +1582,13 @@ app.controller("propertyController", ["$scope", "propertyService", "$cookies", "
                     'no_of_bed_rooms': $scope.no_of_bed_rooms,
                     'furniture': $scope.furniture,
                     'price': $scope.price,
-                    'type': $scope.type,
+                    'type': $scope.sell_rent,
                     'description': $scope.description
                 };
                 var api = 'http://15.206.186.93:3001/property/' + $scope.login_id;
                 propertyService.postProperty(api, postParams)
                     .then(function (data) {
-                        console.log(data, "=======")
                         var uploadUrl = "http://15.206.186.93:3001/property/" + $scope.login_id + "/" + data.id;
-                        console.log(uploadUrl)
                         fileUpload.uploadFileToUrl(file, uploadUrl);
                         if ($cookies.get('language') === 'ar') {
                             alert("تم نشر الملكية بنجاح")
@@ -1625,7 +1620,7 @@ app.controller("propertyController", ["$scope", "propertyService", "$cookies", "
     }
 
 }])
-app.controller("searchController", ['$scope', 'propertyService', '$cookies', '$translate', function ($scope, propertyService, $cookies, $translate) {
+app.controller("searchController", ['$scope', 'propertyService', '$cookies', '$translate','$location', function ($scope, propertyService, $cookies, $translate,$location) {
     $translate.use($cookies.get('language'));
 
     var api = 'http://15.206.186.93:3001/property/types'
@@ -1638,8 +1633,7 @@ app.controller("searchController", ['$scope', 'propertyService', '$cookies', '$t
 
     var api = 'http://15.206.186.93:3001/municipality'
     propertyService.getMunicipality(api).then(function (data) {
-        $scope.municipality = data
-        console.log($scope.municipality)
+        $scope.municipality = data;
 
     }).catch(function (error) {
         $scope.errorMessage = error.data;
@@ -1654,27 +1648,68 @@ app.controller("searchController", ['$scope', 'propertyService', '$cookies', '$t
         });
 
     }
-    // $scope.num_bedrooms = [1, 2, 3, 4, 5, 6];
+    $scope.num_bedrooms = [1, 2, 3, 4, 5, 6];
 
     $scope.furniture_type = ['Semi Furnished', 'Fully Furnished', 'Unfurnished']
-    const urlParams = new URLSearchParams(window.location.search);
-    let property_id = urlParams.get('property_id');
-    let location_id = urlParams.get('location_id');
-    let no_of_bed_rooms = urlParams.get('no_of_bed_rooms');
-    let furniture = urlParams.get('furniture');
-    if (urlParams.get('property_id') || urlParams.get('location_id') || urlParams.get('no_of_bed_rooms') || urlParams.get('furniture')) {
-        var postParams = {
-            'municipality_id': urlParams.get('municipality_id') ? urlParams.get('municipality_id') : '',
-            'location_id': urlParams.get('location_id') ? urlParams.get('location_id') : '',
-            'property_id': urlParams.get('property_id') ? urlParams.get('property_id') : '',
-            'no_of_bed_rooms': urlParams.get('no_of_bed_rooms') ? urlParams.get('no_of_bed_rooms') : '',
-            'furniture': urlParams.get('furniture') ? urlParams.get('furniture') : ''
-        };
-        // console.log($scope.property_id,$scope.location_id,postParams);
+    if($location.search()){
+        searchItem();
+    //         var searchapi = 'http://15.206.186.93:3001/property/search';
+    //     
+    }
+    // const urlParams = new URLSearchParams(window.location.search);
+    // let property_id = urlParams.get('property_id');
+    // let location_id = urlParams.get('location_id');
+    // let no_of_bed_rooms = urlParams.get('no_of_bed_rooms');
+    // let furniture = urlParams.get('furniture');
+    // if (urlParams.get('property_id') || urlParams.get('location_id') || urlParams.get('no_of_bed_rooms') || urlParams.get('furniture') || urlParams.get('type')) {
+    //     var postParams = {
+    //         'municipality_id': urlParams.get('municipality_id') ? urlParams.get('municipality_id') : '',
+    //         'location_id': urlParams.get('location_id') ? urlParams.get('location_id') : '',
+    //         'property_id': urlParams.get('property_id') ? urlParams.get('property_id') : '',
+    //         'no_of_bed_rooms': urlParams.get('no_of_bed_rooms') ? urlParams.get('no_of_bed_rooms') : '',
+    //         'furniture': urlParams.get('furniture') ? urlParams.get('furniture') : '',
+    //         'type':urlParams.get('type') ? urlParams.get('type') : ''
+    //     };
+    //     // console.log($scope.property_id,$scope.location_id,postParams);
 
+    //     var searchapi = 'http://15.206.186.93:3001/property/search';
+    //     return propertyService.search(searchapi, postParams).then(function (data) {
+    //         $scope.totalproperty = data;
+    //         console.log("000000000000000000000");
+    //         $location.$$search = {};
+    //         if (!$scope.totalproperty.length) {
+
+    //         }
+
+    //     }).catch(function (error) {
+    //         $scope.errorMessage = error.data;
+    //     });
+
+    // } else {
+
+    // }
+    // if($cookies.get('params')){
+    //     var searchapi = 'http://15.206.186.93:3001/property/search';
+    //     var postParams = JSON.parse($cookies.get('params'));
+    //  return propertyService.search(searchapi, postParams).then(function (data) {
+    //         $scope.totalproperty = data;
+    //         // console.log("000000000000000000000");
+    //         // $location.$$search = {};
+    //         if (!$scope.totalproperty.length) {
+
+    //         }
+
+    //     }).catch(function (error) {
+    //         $scope.errorMessage = error.data;
+    //     });
+
+    // }
+    function searchItem (){
         var searchapi = 'http://15.206.186.93:3001/property/search';
-        return propertyService.search(searchapi, postParams).then(function (data) {
+     return propertyService.search(searchapi, $location.search()).then(function (data) {
             $scope.totalproperty = data;
+            // console.log("000000000000000000000");
+            // $location.$$search = {};
             if (!$scope.totalproperty.length) {
 
             }
@@ -1682,18 +1717,16 @@ app.controller("searchController", ['$scope', 'propertyService', '$cookies', '$t
         }).catch(function (error) {
             $scope.errorMessage = error.data;
         });
-
-    } else {
-
     }
     $scope.searchItem = function () {
-        if ($scope.municipality_id || $scope.location_id || $scope.property_id || $scope.no_of_bed_rooms || $scope.furniture) {
+        if ($scope.municipality_id || $scope.location_id || $scope.property_id || $scope.no_of_bed_rooms || $scope.furniture || $scope.sell_rent) {
             var postParams = {
                 'municipality_id': $scope.municipality_id ? $scope.municipality_id.id : '',
                 'location_id': $scope.location_id ? $scope.location_id.id : '',
                 'property_id': $scope.property_id ? $scope.property_id.id : '',
                 'no_of_bed_rooms': $scope.no_of_bed_rooms ? $scope.no_of_bed_rooms : '',
-                'furniture': $scope.furniture ? $scope.furniture : ''
+                'furniture': $scope.furniture ? $scope.furniture : '',
+                'type':$scope.sell_rent ? $scope.sell_rent : ''
             };
             var searchapi = 'http://15.206.186.93:3001/property/search';
             return propertyService.search(searchapi, postParams).then(function (data) {
