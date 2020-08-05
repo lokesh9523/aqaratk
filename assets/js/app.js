@@ -1504,7 +1504,7 @@ app.controller("registerController", ["$scope", "registerService", "$translate",
             'password': $scope.password,
             'mobile_number': $scope.mobile_number,
             'name': $scope.name,
-            'adjective': $scope.adjective
+            'adjective': $scope.adjecive
         };
 
         var api = 'http://15.206.186.93:3001/register';
