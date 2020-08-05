@@ -124,7 +124,7 @@ var translationsEN = {
     // "New Al Mirqab": "New Al Mirqab",
     // "Fereej Al Nasr": "Fereej Al Nasr",
     // "New Salatah": "New Salatah",
-     "Nuaija": "Nuaija",
+    "Nuaija": "Nuaija",
     // "Al Hilal": "Al Hilal",
     // "Old Airport": "Old Airport",
     // "Al Thumama": "Al Thumama",
@@ -158,7 +158,7 @@ var translationsEN = {
     // "Muraikh": "Muraikh",
     // "Baaya": "Baaya",
     // "Mehairja": "Mehairja",
-     "Fereej Al Soudan": "Fereej Al Soudan",
+    "Fereej Al Soudan": "Fereej Al Soudan",
     // "Al Waab": "Al Waab",
     // "Al Aziziya": "Al Aziziya",
     // "New Fereej Al ghanim": "New Fereej Al Ghanim",
@@ -195,8 +195,8 @@ var translationsEN = {
     // "Ain Sinan": "Ain Sinan",
     // "Madinat Al Kaaban": "Madinat Al Kaaban",
     // "Fuwayrit": "Fuwayrit",
-     "Abou Dhalouf": "Abou Dhalouf",
-     "Musaykah":"Musaykah",
+    "Abou Dhalouf": "Abou Dhalouf",
+    "Musaykah": "Musaykah",
     // "Zubarah": "Zubarah",
     // "Madinat Ash Shamal": "Madinat ash Shamal",
     // "Ar Ru'ays": "Ar Ru'ays",
@@ -420,7 +420,7 @@ var translationsEN = {
     "Al Adba": "Al Adba",
     "Al Mafjar": "Al Mafjar",
     "Maroonah": "Maroonah",
-    "Al Mashrab":"Al Mashrab",
+    "Al Mashrab": "Al Mashrab",
     "Lejthaya": "Lejthaya",
     "Al Jameel": "Al Jameel",
     "Ain Mohamed": "Ain Mohamed",
@@ -556,10 +556,10 @@ var translationsEN = {
     "Semi Furnished": "Semi Furnished",
     'required': 'Required',
     'sell_rent': 'Sell, Rent or Required',
-    'sell_rent' : 'Sell, Rent/Required',
+    'sell_rent': 'Sell, Rent/Required',
     "Fully Furnished": "Fully Furnished",
     "Semi Furnished": "Semi Furnished",
-    "Unfurnished" : "Unfurnished",
+    "Unfurnished": "Unfurnished",
     "Residential": "Residential",
     "Commercial": "Commercial",
     "Service": "Service",
@@ -575,83 +575,83 @@ var translationsEN = {
     "sell_or_rent": "Sell, Rent or Required",
     "about_the_property": "About the Property",
     "please_select": "Please Select",
-    "tnc1" : "I acknowledge that I am solely responsible for using the website when logging in to Aqaratk Website.",
-    "tnc2" : 'Not to collect any personal information for commercial purposes including full name, address and email.',
-    "tnc3" : "I acknowledge that I am solely responsible for providing my content, including chats, profile information, links, images, other content, etc.",
-    "tnc" : "Terms and Conditions",
-    "tnc_text" : "Agree on our",
-    "Barwa Village":"Barwa Village",
-    "Ras Abu Fontas":"Ras Abu Fontas",
-    "Industrial Mesaieed":"Industrial Mesaieed",
-    "South Salwa St.":"South Salwa St.",
-    "Muaither":"Muaither",
-    "Dukhan":"Dukhan",
-    "Al Utouriya":"Al Utouriya",
-    "Al Soudan":"Al Soudan1",
-    "Al Shahaniya":"Al Shahaniya",
-    "Al Nasriya":"Al Nasriya",
-    "Al Nasraniya":"Al Nasraniya",
-    "Al Murra":"Al Murra",
-    "Al Manaseer":"Al Manaseer",
-    "West Bay-Lagoon":"West Bay – Lagoon",
-    "Onaiza":"Onaiza",
-    "Old Salatah":"Old Salatah",
-    'Old Al Khulaifat':"Old Al Khulaifat",
-    "Nuaija":"Nuaija",
-    "New Al Khulaifat":"New Al Khulaifat",
-    "Lusail":"Lusail1",
-    "Jeryan Nejaima":"Jeryan Nejaima",
-    "Jelaiah":"Jelaiah",
-    "Heart of Hoaha":"Heart of Hoaha",
-    "Duhail":"Duhail",
-    "Diplomatci Area":"Diplomatic Area",
-    "Al sadd":"Al Sadd",
-    "Al Muntazah":"Al Muntazah",
-    "Al Asiri":"Al Asiri",
-    "Freej Al Ali":"Freej Al Ali",
-    "Al Nuaim-Leabaib":"Al Nuaim - Leabaib",
-    "Rawdat Rasid":"Rawdat Rasid",
-    "Mesaimeer":"Mesaimeer",
-    "Old Khulaifat":"Old Khulaifat"
-    
+    "tnc1": "I acknowledge that I am solely responsible for using the website when logging in to Aqaratk Website.",
+    "tnc2": 'Not to collect any personal information for commercial purposes including full name, address and email.',
+    "tnc3": "I acknowledge that I am solely responsible for providing my content, including chats, profile information, links, images, other content, etc.",
+    "tnc": "Terms and Conditions",
+    "tnc_text": "Agree on our",
+    "Barwa Village": "Barwa Village",
+    "Ras Abu Fontas": "Ras Abu Fontas",
+    "Industrial Mesaieed": "Industrial Mesaieed",
+    "South Salwa St.": "South Salwa St.",
+    "Muaither": "Muaither",
+    "Dukhan": "Dukhan",
+    "Al Utouriya": "Al Utouriya",
+    "Al Soudan": "Al Soudan1",
+    "Al Shahaniya": "Al Shahaniya",
+    "Al Nasriya": "Al Nasriya",
+    "Al Nasraniya": "Al Nasraniya",
+    "Al Murra": "Al Murra",
+    "Al Manaseer": "Al Manaseer",
+    "West Bay-Lagoon": "West Bay – Lagoon",
+    "Onaiza": "Onaiza",
+    "Old Salatah": "Old Salatah",
+    'Old Al Khulaifat': "Old Al Khulaifat",
+    "Nuaija": "Nuaija",
+    "New Al Khulaifat": "New Al Khulaifat",
+    "Lusail": "Lusail1",
+    "Jeryan Nejaima": "Jeryan Nejaima",
+    "Jelaiah": "Jelaiah",
+    "Heart of Hoaha": "Heart of Hoaha",
+    "Duhail": "Duhail",
+    "Diplomatci Area": "Diplomatic Area",
+    "Al sadd": "Al Sadd",
+    "Al Muntazah": "Al Muntazah",
+    "Al Asiri": "Al Asiri",
+    "Freej Al Ali": "Freej Al Ali",
+    "Al Nuaim-Leabaib": "Al Nuaim - Leabaib",
+    "Rawdat Rasid": "Rawdat Rasid",
+    "Mesaimeer": "Mesaimeer",
+    "Old Khulaifat": "Old Khulaifat"
+
 
 
 };
 
 var translationsAR = {
-    "Old Khulaifat":"الخليفات القديمة",
-    "Rawdat Rasid":"روضة راشد",
-    "Mesaimeer":"مسيمير",
-    "Al Nuaim-Leabaib":"النعيم - لعبيب",
-    "West Bay-Lagoon":"الخليج الغربي - لاغون",
-    "Onaiza":"عنيزة",
-    "Old Salatah":"السلطة  القديمة",
-    "Old Al Khulaifat":"الخليفات القديمة",
-    "Nuaija":"النعيجة",
-    "New Al Khulaifat":"الخليفات الجديدة",
-    "Lusail":"لوسيل",
-    "Jeryan Nejaima":"جريان نجيمة",
-    "Jelaiah":"جليعة",
-    "Heart of Hoaha":"قلب الدوحة",
-    "Freej Al Ali":"فريج العلي",
-    "Duhail":"الدحيل",
-    "Diplomatci Area":"المنطقة الدبلوماسية",
-    "Al sadd":"السد",
-    "Al Muntazah":"المنتزه",
-    "Al Asiri":"العسيري",
-    "South Salwa St.":"جنوب شارع سلوى",
-    "Muaither":"معيذر",
-    "Dukhan":"دخان",
-    "Al Utouriya":"العطورية",
-    "Al Soudan":"السودان",
-    "Al Shahaniya":"الشحانية",
-    "Al Nasriya":"الناصرية",
-    "Al Nasraniya":"النصرانية",
-    "Al Murra":"المرة",
-    "Al Manaseer":"المناصير",
-    "Barwa Village":"قرية بروة",
-    "Ras Abu Fontas":"راس بو فنطاس",
-    "Industrial Mesaieed":"مسيعيد الصناعية",
+    "Old Khulaifat": "الخليفات القديمة",
+    "Rawdat Rasid": "روضة راشد",
+    "Mesaimeer": "مسيمير",
+    "Al Nuaim-Leabaib": "النعيم - لعبيب",
+    "West Bay-Lagoon": "الخليج الغربي - لاغون",
+    "Onaiza": "عنيزة",
+    "Old Salatah": "السلطة  القديمة",
+    "Old Al Khulaifat": "الخليفات القديمة",
+    "Nuaija": "النعيجة",
+    "New Al Khulaifat": "الخليفات الجديدة",
+    "Lusail": "لوسيل",
+    "Jeryan Nejaima": "جريان نجيمة",
+    "Jelaiah": "جليعة",
+    "Heart of Hoaha": "قلب الدوحة",
+    "Freej Al Ali": "فريج العلي",
+    "Duhail": "الدحيل",
+    "Diplomatci Area": "المنطقة الدبلوماسية",
+    "Al sadd": "السد",
+    "Al Muntazah": "المنتزه",
+    "Al Asiri": "العسيري",
+    "South Salwa St.": "جنوب شارع سلوى",
+    "Muaither": "معيذر",
+    "Dukhan": "دخان",
+    "Al Utouriya": "العطورية",
+    "Al Soudan": "السودان",
+    "Al Shahaniya": "الشحانية",
+    "Al Nasriya": "الناصرية",
+    "Al Nasraniya": "النصرانية",
+    "Al Murra": "المرة",
+    "Al Manaseer": "المناصير",
+    "Barwa Village": "قرية بروة",
+    "Ras Abu Fontas": "راس بو فنطاس",
+    "Industrial Mesaieed": "مسيعيد الصناعية",
     LOGIN: 'تسجيل الدخول',
     REGISTER: 'التسجيل',
     LOCATION: 'الدوحة, قطرالخليج, الغربي',
@@ -781,7 +781,7 @@ var translationsAR = {
     // "New Al Mirqab": "المرقاب الجديد",
     // "Fereej Al Nasr": "فريج النصر",
     // "New Salatah": "سلطه الجديدة",
-     "Nuaija": "نعيجة",
+    "Nuaija": "نعيجة",
     // "Al Hilal": "الهلال",
     // "Old Airport": "المطار القديم",
     // "Al Thumama": "الثمامة",
@@ -822,7 +822,7 @@ var translationsAR = {
     // "Muraikh": "مريخ",
     // "Baaya": "بعيا",
     // "Mehairja": "محيرجة",
-     "Fereej Al Soudan": "فريج السودان",
+    "Fereej Al Soudan": "فريج السودان",
     // "Al Waab": "الوعب",
     // "Al Aziziya": "العزيزية",
     // "New Fereej Al ghanim": "فريج الغانم الجديد",
@@ -864,8 +864,8 @@ var translationsAR = {
     // "Ain Sinan": "عين سنان",
     // "Madinat Al Kaaban": "مدينة الكعبان",
     // "Fuwayrit": "فوايرط",
-     "Abou Dhalouf": "أبو ظلوف",
-     "Musaykah":"مسيكة",
+    "Abou Dhalouf": "أبو ظلوف",
+    "Musaykah": "مسيكة",
     // "Zubarah": "الزبارة",
     // "Madinat Ash Shamal": "مدينة الشمال",
     // "Ar Ru'ays": "الرويس",
@@ -897,7 +897,7 @@ var translationsAR = {
     // "Al Sakhama": "السخامة",
     // "Al Masrouhiya": "المصروحية",
     // "Wadi Lusail": "وادي لوسيل",
-     "Lusail": "لوسيل",
+    "Lusail": "لوسيل",
     // "Umm Qarn": "أم قرن",
     // "Al Daayen": "الضعاين",
     // "Jaryan Najaima":"جريان نجيمة",
@@ -1235,7 +1235,7 @@ var translationsAR = {
     "Rent1": "إيجار",
     "Fully Furnished": 'فرش كامل',
     "Semi Furnished": "نصف فرش",
-    "Unfurnished" : "غير مفروش",
+    "Unfurnished": "غير مفروش",
     'required': 'مطلوب',
     'sell_rent': 'للبيع، للإيجار أو مطلوب',
     "Residential": "سكني",
@@ -1255,11 +1255,11 @@ var translationsAR = {
     "please_select": "يرجى التحديد",
     "Real_estate_company": 'مكتب عقارات',
     "Owners_Agent_Representative": ' مندوب أو وكيل المالك',
-    "tnc1" : "أقر بأني المسؤول الوحيد عن استخدام الموقع عند تسجيل الدخول إلى عقاراتك",
-    "tnc2" : 'عدم القيام بجمع أي معلومات شخصية لأغراض تجارية بما في ذلك الاسم الكامل، والعنوان، والبريد الإلكتروني.',
-    "tnc3" : "أقر بأني المسؤول الوحيد عن تقديم المحتوى الخاص بي، بما في ذلك المحادثات، ومعلومات الملف الشخصي، والروابط، والصور، والمحتويات الأخرى، وما شابه ذلك",
-    "tnc" : "الشروط والأحكام",
-    "tnc_text" : "الموافقة على",
+    "tnc1": "أقر بأني المسؤول الوحيد عن استخدام الموقع عند تسجيل الدخول إلى عقاراتك",
+    "tnc2": 'عدم القيام بجمع أي معلومات شخصية لأغراض تجارية بما في ذلك الاسم الكامل، والعنوان، والبريد الإلكتروني.',
+    "tnc3": "أقر بأني المسؤول الوحيد عن تقديم المحتوى الخاص بي، بما في ذلك المحادثات، ومعلومات الملف الشخصي، والروابط، والصور، والمحتويات الأخرى، وما شابه ذلك",
+    "tnc": "الشروط والأحكام",
+    "tnc_text": "الموافقة على",
     // "tnc_link" : "الشروط والأحكام"
 };
 
@@ -1342,7 +1342,6 @@ app.controller("journalGlobalController", ["$translate", "$scope", "loginService
         window.onload = function () {
             console.log("iam here1111");
             if ($cookies.get('language') === 'ar') {
-                console.log("iam here11")
                 console.log('Language is arabic');
                 //   document.getElementById('login_text').style.float ='left';
                 //   document.getElementById('mobile_num').style.direction ='ltr';
@@ -1436,7 +1435,6 @@ app.controller("journalGlobalController", ["$translate", "$scope", "loginService
     } else {
     }
     $scope.searchItem = function () {
-        console.log("iam here");
         if ($scope.municipality_id || $scope.location_id || $scope.property_id || $scope.no_of_bed_rooms || $scope.furniture) {
             console.log("iam here")
             var postParams = {
@@ -1452,10 +1450,16 @@ app.controller("journalGlobalController", ["$translate", "$scope", "loginService
             window.location.href = '/search?municipality_id=' + postParams.municipality_id + '&location_id=' + postParams.location_id + '&property_id=' + postParams.property_id + '&no_of_bed_rooms=' + postParams.no_of_bed_rooms + '&furniture=' + postParams.furniture;
 
         } else {
-            alert("Select Atleast One Field")
+            if ($cookies.get('language') === 'ar') {
+
+                alert("حدد على الأقل حقل واحد");
+
+            } else {
+                alert("Select Atleast One Field");
+            }
         }
     }
-    $scope.furniture_type = ['Semi Furnished', 'Fully Furnished','Unfurnished']
+    $scope.furniture_type = ['Semi Furnished', 'Fully Furnished', 'Unfurnished']
 
     $scope.forgetpassword = function () {
         window.location.href = "/forgot_password";
@@ -1507,8 +1511,12 @@ app.controller("registerController", ["$scope", "registerService", "$translate",
 
         return registerService.registerUser(api, postParams)
             .then(function (data) {
-                console.log(data, "===================")
-                alert("Registered Successfully Please Login");
+                if ($cookies.get('language') === 'ar') {
+                    alert("مسجل بنجاح الرجاء تسجيل الدخول ")
+
+                } else {
+                    alert("Registered Successfully Please Login");
+                }
                 window.location.href = '/';
             })
             .catch(function (error) {
@@ -1533,7 +1541,7 @@ app.controller("propertyController", ["$scope", "propertyService", "$cookies", "
     }
     $scope.num_bedrooms = [1, 2, 3, 4, 5, 6];
 
-    $scope.furniture_type = ['Semi Furnished', 'Fully Furnished','Unfurnished']
+    $scope.furniture_type = ['Semi Furnished', 'Fully Furnished', 'Unfurnished']
     var api = 'http://15.206.186.93:3001/property/types'
     propertyService.getPropertyTypes(api).then(function (data) {
         $scope.property = data
@@ -1587,16 +1595,31 @@ app.controller("propertyController", ["$scope", "propertyService", "$cookies", "
                         var uploadUrl = "http://15.206.186.93:3001/property/" + $scope.login_id + "/" + data.id;
                         console.log(uploadUrl)
                         fileUpload.uploadFileToUrl(file, uploadUrl);
-                        alert("Property Posted Sucessfully")
+                        if ($cookies.get('language') === 'ar') {
+                            alert("تم نشر الملكية بنجاح")
+
+                        } else {
+                            alert("Property Posted Sucessfully");
+                        }
                     }).catch(function (error) {
                         $scope.errorMessage = error.data;
                     });
             } else {
-                alert("Please Enter All the fields")
+                if ($cookies.get('language') === 'ar') {
+                    alert("الرجاء إدخال جميع الحقول ")
+
+                } else {
+                    alert("Please Enter All the fields");
+                }
             }
 
         } else {
-            alert("Please Login")
+            if ($cookies.get('language') === 'ar') {
+                alert("يرجى تسجيل الدخول")
+
+            } else {
+                alert("Please Login");
+            }
         }
 
     }
@@ -1633,7 +1656,7 @@ app.controller("searchController", ['$scope', 'propertyService', '$cookies', '$t
     }
     // $scope.num_bedrooms = [1, 2, 3, 4, 5, 6];
 
-    $scope.furniture_type = ['Semi Furnished', 'Fully Furnished','Unfurnished']
+    $scope.furniture_type = ['Semi Furnished', 'Fully Furnished', 'Unfurnished']
     const urlParams = new URLSearchParams(window.location.search);
     let property_id = urlParams.get('property_id');
     let location_id = urlParams.get('location_id');
@@ -1665,7 +1688,6 @@ app.controller("searchController", ['$scope', 'propertyService', '$cookies', '$t
     }
     $scope.searchItem = function () {
         if ($scope.municipality_id || $scope.location_id || $scope.property_id || $scope.no_of_bed_rooms || $scope.furniture) {
-            console.log("iam here")
             var postParams = {
                 'municipality_id': $scope.municipality_id ? $scope.municipality_id.id : '',
                 'location_id': $scope.location_id ? $scope.location_id.id : '',
@@ -1681,14 +1703,19 @@ app.controller("searchController", ['$scope', 'propertyService', '$cookies', '$t
             });
 
         } else {
-            alert("Select Atleast One Field")
+            if ($cookies.get('language') === 'ar') {
+
+                alert("حدد على الأقل حقل واحد");
+
+            } else {
+                alert("Select Atleast One Field");
+            }
         }
     }
 }])
 app.controller("contactController", ['$scope', 'commonService', '$cookies', '$translate', function ($scope, commonService, $cookies, $translate) {
     $translate.use($cookies.get('language'));
     $scope.contactus = function () {
-        console.log("iam here1111111111111111111")
         if ($scope.first_name && $scope.last_name && $scope.email && $scope.subject) {
             var data = {
                 "first_name": $scope.first_name,
@@ -1699,10 +1726,20 @@ app.controller("contactController", ['$scope', 'commonService', '$cookies', '$tr
 
             var api = 'http://15.206.186.93:3001/contact'
             return commonService.contactus(api, data).then(function (data) {
-                alert("We Will Contact You Shortly")
+                if ($cookies.get('language') === 'ar') {
+                    alert("سوف نتصل بك قريبا")
+
+                } else {
+                    alert("We Will Contact You Shortly");
+                }
             })
         } else {
-            $scope.errorMessage = "Please Enter all the Fields";
+            if ($cookies.get('language') === 'ar') {
+                $scope.errorMessage = "الرجاء إدخال جميع الحقول"
+
+            } else {
+                $scope.errorMessage = "Please Enter all the Fields";
+            }
         }
     }
 
@@ -1718,13 +1755,19 @@ app.controller("forgotController", ['$scope', 'commonService', '$cookies', '$tra
 
             var api = 'http://15.206.186.93:3001/forgotpassword'
             return commonService.contactus(api, data).then(function (data) {
-                alert("Password Has Sent to Your Mail")
+                if ($cookies.get('language') === 'ar') {
+                    alert("تم إرسال كلمة المرور إلى بريدك")
+
+                } else {
+                    alert("Password Has Sent to Your Mail");
+                }
             }, error => {
                 // console.log(error)
                 alert(error.data)
             })
         } else {
             $scope.errorMessage = "Please Enter all the Fields";
+            $scope.errorMessage = "الرجاء إدخال جميع الحقول"
         }
     }
 
